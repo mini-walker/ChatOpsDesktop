@@ -1,0 +1,13 @@
+{
+  "Provider": "Groq",
+  "base_url": "https://api.groq.com/openai/v1/chat/completions",
+  "API-Key": "",
+  "models": [
+    "qwen/qwen3-32b",
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "openai/gpt-oss-safeguard-20b",
+    "meta-llama/llama-4-scout-17b-16e-instruct",
+    "meta-llama/llama-guard-4-12b"
+  ]
+}
