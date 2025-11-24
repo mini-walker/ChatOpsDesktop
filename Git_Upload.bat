@@ -1,6 +1,31 @@
 @echo off
 setlocal enabledelayedexpansion
 
+rem ===== User Info: Only set on first-time use =====
+rem git config --global user.name "mini-walker"
+rem git config --global user.email "sjin@mun.ca"
+
+echo.
+echo ===== Step 0: Create .gitignore =====
+echo # Auto-generated .gitignore > .gitignore
+echo build/>>.gitignore
+echo */build/>>.gitignore
+echo */amrex_build/>>.gitignore
+echo *.o>>.gitignore
+echo *.a>>.gitignore
+echo *.so>>.gitignore
+echo *.exe>>.gitignore
+echo *.dll>>.gitignore
+echo *.log>>.gitignore
+echo Git_Upload.bat>>.gitignore
+rem echo *.obj>>.gitignore
+
+echo [.gitignore created]
+
+
+@echo off
+setlocal enabledelayedexpansion
+
 echo ===== Step 0: Create .gitignore =====
 echo # Auto-generated .gitignore > .gitignore
 echo build/>>.gitignore
