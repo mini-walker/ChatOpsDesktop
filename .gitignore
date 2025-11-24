@@ -9,3 +9,4 @@ build/
 *.dll
 *.log
 Git_Upload.bat
+.gitignore
