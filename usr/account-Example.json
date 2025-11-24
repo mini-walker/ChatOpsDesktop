@@ -1,0 +1,16 @@
+{
+  "Provider": "OpenRouter",
+  "base_url": "https://openrouter.ai/api/v1/chat/completions",
+  "API-Key": "",
+  "models": [
+    "x-ai/grok-4.1-fast",
+    "openai/gpt-4o-mini",
+    "tngtech/deepseek-r1t2-chimera:free",
+    "deepseek/deepseek-r1-0528-qwen3-8b:free",
+    "qwen/qwen2.5-vl-32b-instruct:free",
+    "google/gemini-2.0-flash-exp:free",
+    "openai/gpt-4o",
+    "meta-llama/llama-3.3-70b-instruct:free",
+    "kwaipilot/kat-coder-pro:free"
+  ]
+}
