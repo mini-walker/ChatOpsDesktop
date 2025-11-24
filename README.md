@@ -5,6 +5,49 @@ Supports multilingual UI, theme customization, AI provider configuration, dynami
 
 ---
 
+
+## Screenshots 📸
+
+<img 
+src="Screensnaps/Static.PNG" 
+alt="Chat Window Screenshot" 
+title="Chat window with dynamic background" 
+width="600"
+/>
+
+*Figure 1: User interface with background.*
+
+
+<img 
+src="Screensnaps/Dynamic.gif" 
+alt="Chat Window Screenshot" 
+title="Chat window with dynamic background" 
+width="600"
+/>
+
+*Figure 2: Chat window with dynamic background.*
+
+
+<img 
+src="Screensnaps/Chat-Example.PNG" 
+alt="Example of dialog with various AI models." 
+title="Chat window with dynamic background" 
+width="600"
+/>
+
+*Figure 3: Chat window with dynamic background.*
+
+<img 
+src="Screensnaps/Example-with-code-and-equations.PNG" 
+alt="Example of AI replies with code and equations." 
+title="Chat window with dynamic background" 
+width="600"
+/>
+
+*Figure 4: Example of AI replies with code and equations.*
+
+---
+
 ## Features ✨
 
 * Multi-language support (English / Chinese)
@@ -142,50 +185,6 @@ Users can set chat background dynamically via:
 * Or by editing `"chat_background"` field in `account.json`
 
 The chat window will refresh to display the selected image.
-
----
-
-## Screenshots 📸
-
-<img 
-src="Screensnaps/Static.PNG" 
-alt="Chat Window Screenshot" 
-title="Chat window with dynamic background" 
-width="600"
-/>
-
-*Figure 1: User interface with background.*
-
-
-<img 
-src="Screensnaps/Dynamic.gif" 
-alt="Chat Window Screenshot" 
-title="Chat window with dynamic background" 
-width="600"
-/>
-
-*Figure 2: Chat window with dynamic background.*
-
-
-<img 
-src="Screensnaps/Chat-Example.PNG" 
-alt="Example of dialog with various AI models." 
-title="Chat window with dynamic background" 
-width="600"
-/>
-
-*Figure 3: Chat window with dynamic background.*
-
-<img 
-src="Screensnaps/Example-with-code-and-equations.PNG" 
-alt="Example of AI replies with code and equations." 
-title="Chat window with dynamic background" 
-width="600"
-/>
-
-*Figure 4: Example of AI replies with code and equations.*
-
-
 
 ---
 
