@@ -1,11 +1,3 @@
 # Auto-generated .gitignore 
 build/
 */build/
-*/amrex_build/
-*.o
-*.a
-*.so
-*.exe
-*.dll
-*.log
-Git_Upload.bat
