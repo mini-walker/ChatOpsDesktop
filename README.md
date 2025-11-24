@@ -182,9 +182,9 @@ python src/main.py
 Users can set chat background dynamically via:
 
 * `Settings > Appearance > Chat Background`
-* Or by editing `"chat_background"` field in `account.json`
+* Or by editing `"chat_background"` field in `usr/settings.ini`
 
-The chat window will refresh to display the selected image.
+The chat window will refresh to display the selected image, note that the 'settings.ini' file will be saved when you run the application automatically.
 
 ---
 
