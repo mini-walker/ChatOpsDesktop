@@ -1,15 +1,21 @@
 #-----------------------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Purpose : Implements the chat history side panel, including folder management,
 #           chat persistence helpers, and UI translations.
 # Author  : Shanqin Jin
 # Email   : sjin@mun.ca
 # Updated : 2025-11-23
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 # Purpouse: This file is used to create the side panel for chat history management
 # Programmer: Shanqin Jin
 # Email: sjin@mun.ca
 # Date: 2025-11-23 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 #----------------------------------------------------------------------------------------- 
 
@@ -36,7 +42,10 @@ from Utils.Utils import utils
 # ============================================================================
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # ----------------------------------------------------------------------------
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 def sanitize_filename(name: str, max_len: int = 200) -> str:
@@ -87,7 +96,10 @@ class ChatItemWidget(QWidget):
     - Transparent background
     """
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def __init__(self, chat_title, icon_path, parent_listwidget_item, folder_name, history_list, *args, **kwargs):
@@ -117,6 +129,7 @@ class ChatItemWidget(QWidget):
         layout.addStretch()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Inline rename workflow
     # -------------------------------------------------------------------------
@@ -126,6 +139,10 @@ class ChatItemWidget(QWidget):
         rename the chat inline. This method only creates the editor if it is not
         already active, configures styling, and wires up the confirmation hooks.
         """
+=======
+    # ---------------- Inline rename ----------------
+    def start_rename(self):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     # ---------------- Inline rename ----------------
     def start_rename(self):
@@ -163,6 +180,7 @@ class ChatItemWidget(QWidget):
         self.editor.returnPressed.connect(self.finish_rename)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Inline rename commit
     # -------------------------------------------------------------------------
@@ -175,12 +193,17 @@ class ChatItemWidget(QWidget):
           2. Update the visual label so the list reflects the new title.
           3. Ask the parent side panel to rename the persisted chat file.
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def finish_rename(self):
         """
         Commit rename action:
         - Update UI label
         - Update QListWidgetItem user role data
         - Ask parent Side Panel to rename underlying .json on disk (if exists)
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         """
         if not self.editor:
@@ -212,6 +235,7 @@ class ChatItemWidget(QWidget):
         self.label.show()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Event filter for inline editor
     # -------------------------------------------------------------------------
@@ -220,6 +244,10 @@ class ChatItemWidget(QWidget):
         Close the inline rename editor whenever focus is lost or when the user
         clicks outside of the editor region.
         """
+=======
+    # ---------------- Event Filter ----------------
+    def eventFilter(self, obj, event):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     # ---------------- Event Filter ----------------
     def eventFilter(self, obj, event):
@@ -241,7 +269,10 @@ class CollapsibleFolder(QWidget):
     toggled = Signal(bool)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def __init__(self, name: str, parent=None):
@@ -288,9 +319,13 @@ class CollapsibleFolder(QWidget):
         self.update_icon()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Toggle expand / collapse state
     # -------------------------------------------------------------------------
+=======
+    # ---------------- Toggle expand/collapse ----------------
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     # ---------------- Toggle expand/collapse ----------------
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -302,9 +337,12 @@ class CollapsibleFolder(QWidget):
         super().mousePressEvent(event)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Refresh folder icon based on state
     # -------------------------------------------------------------------------
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def update_icon(self):
@@ -314,6 +352,7 @@ class CollapsibleFolder(QWidget):
         self.icon_label.setPixmap(QIcon(icon_path).pixmap(18, 18))
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Inline rename workflow
     # -------------------------------------------------------------------------
@@ -322,6 +361,10 @@ class CollapsibleFolder(QWidget):
         Allow the folder header to be renamed inline by temporarily swapping the
         `QLabel` for a styled `QLineEdit`.
         """
+=======
+    # ---------------- Inline rename ----------------
+    def start_rename(self):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     # ---------------- Inline rename ----------------
     def start_rename(self):
@@ -357,6 +400,7 @@ class CollapsibleFolder(QWidget):
         self.name_label.hide()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Inline rename commit
     # -------------------------------------------------------------------------
@@ -365,6 +409,9 @@ class CollapsibleFolder(QWidget):
         Persist the inline rename changes by updating both the widget label and
         the cached folder name.
         """
+=======
+    def finish_inline_edit(self):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     def finish_inline_edit(self):
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -379,6 +426,7 @@ class CollapsibleFolder(QWidget):
         self.name_label.show()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Event filter for rename editor
     # -------------------------------------------------------------------------
@@ -387,6 +435,9 @@ class CollapsibleFolder(QWidget):
         Close the rename editor whenever the input loses focus or the user
         clicks outside of the editing rectangle.
         """
+=======
+    def eventFilter(self, obj, event):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     def eventFilter(self, obj, event):
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -410,11 +461,14 @@ class CollapsibleFolder(QWidget):
 
 class Slide_Side_Panel(QWidget):
 <<<<<<< HEAD
+<<<<<<< HEAD
     """
     A composite widget that manages the full lifecycle of chat folders and chat
     entries on the left side panel. It keeps UI state, synchronizes with the
     on-disk history directory, and exposes Qt signals for the host window.
     """
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
@@ -425,12 +479,16 @@ class Slide_Side_Panel(QWidget):
     show_settings_requested = Signal()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     def __init__(self, parent=None, storage_root: str = "ChatHistory"):
         """
         Initialize the panel, wiring up internal state containers, default UI
         sizing, and eagerly loading any persisted chat history from disk.
         """
+=======
+    def __init__(self, parent=None, storage_root: str = "ChatHistory"):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     def __init__(self, parent=None, storage_root: str = "ChatHistory"):
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -515,6 +573,7 @@ class Slide_Side_Panel(QWidget):
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     def init_ui(self):
         """
@@ -522,6 +581,10 @@ class Slide_Side_Panel(QWidget):
         buttons, chat history list, and the token statistics section.
         """
         # ---------------- UI Build ----------------
+=======
+    # ---------------- UI Build ----------------
+    def init_ui(self):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     # ---------------- UI Build ----------------
     def init_ui(self):
@@ -611,7 +674,11 @@ class Slide_Side_Panel(QWidget):
         self.history_list = QListWidget()
         self.history_list.setContextMenuPolicy(Qt.CustomContextMenu)
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.history_list.setSelectionMode(QListWidget.ExtendedSelection)  # Allow Shift/Ctrl multi-select
+=======
+        self.history_list.setSelectionMode(QListWidget.ExtendedSelection)  # 支持 Shift / Ctrl 多选
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         self.history_list.setSelectionMode(QListWidget.ExtendedSelection)  # 支持 Shift / Ctrl 多选
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -636,8 +703,13 @@ class Slide_Side_Panel(QWidget):
         stats_layout.setSpacing(6)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # Define a compact data structure: (attribute prefix, label text).
         # This lets us auto-create attributes such as self.current_tokens_title.
+=======
+        # 定义数据结构： (变量前缀, 显示标题)
+        # 这样会自动生成: self.current_tokens_title, self.current_tokens_value 等变量
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         # 定义数据结构： (变量前缀, 显示标题)
         # 这样会自动生成: self.current_tokens_title, self.current_tokens_value 等变量
@@ -649,7 +721,11 @@ class Slide_Side_Panel(QWidget):
         ]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # Create one row per metric
+=======
+        # 循环创建 3 行
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         # 循环创建 3 行
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -659,7 +735,11 @@ class Slide_Side_Panel(QWidget):
             row_layout.setContentsMargins(0, 0, 0, 0)
             
 <<<<<<< HEAD
+<<<<<<< HEAD
             # 1. Create title label
+=======
+            # 1. 创建标题 Label
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
             # 1. 创建标题 Label
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -668,7 +748,11 @@ class Slide_Side_Panel(QWidget):
             lbl_title.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
             
 <<<<<<< HEAD
+<<<<<<< HEAD
             # 2. Create value label
+=======
+            # 2. 创建数值 Label
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
             # 2. 创建数值 Label
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -676,6 +760,7 @@ class Slide_Side_Panel(QWidget):
             lbl_value.setStyleSheet("color: #333;")
             lbl_value.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
             # 3. Attach labels to the row layout
             row_layout.addWidget(lbl_title)
@@ -691,6 +776,8 @@ class Slide_Side_Panel(QWidget):
 
         # Add a spacer to push everything upward
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             # 3. 添加到行布局
             row_layout.addWidget(lbl_title)
             row_layout.addWidget(lbl_value)
@@ -706,11 +793,15 @@ class Slide_Side_Panel(QWidget):
             setattr(self, f"{prefix}_value", lbl_value)
 
         # 底部弹簧，把内容顶上去
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         stats_layout.addStretch()
 
         layout.addWidget(stats)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     # -------------------------------------------------------------------------
     def create_divider(self):
@@ -719,10 +810,15 @@ class Slide_Side_Panel(QWidget):
         within the panel layout.
         """
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
 
     # ---------------- Divider ----------------
     def create_divider(self):
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         line = QFrame()
         line.setObjectName("divider")
@@ -742,12 +838,17 @@ class Slide_Side_Panel(QWidget):
     # Folder / Chat Creation / UI management
     # =========================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
     def create_folder(self, name=None):
         """
         Create a folder header row inside the list widget and register internal
         bookkeeping so future chats can be inserted beneath that folder.
         When `name` is omitted, a human-friendly default is generated.
         """
+=======
+
+    def create_folder(self, name=None):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 
     def create_folder(self, name=None):
@@ -773,12 +874,16 @@ class Slide_Side_Panel(QWidget):
             self.active_folder = name
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     def on_folder_toggled(self, folder_widget, expanded):
         """
         Expand or collapse all chat rows under the provided folder widget and
         persist the expanded state for subsequent refreshes.
         """
+=======
+    def on_folder_toggled(self, folder_widget, expanded):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     def on_folder_toggled(self, folder_widget, expanded):
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -794,12 +899,17 @@ class Slide_Side_Panel(QWidget):
             chat_item.setHidden(not expanded)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     def on_chat_item_clicked(self,item):
         """
         Handle single-click events on the list widget. Folder rows update the
         active folder selection, while chat rows emit `chat_clicked`.
         """
+=======
+    # ---------------- Chat / Folder Click ----------------
+    def on_chat_item_clicked(self,item):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     # ---------------- Chat / Folder Click ----------------
     def on_chat_item_clicked(self,item):
@@ -818,6 +928,7 @@ class Slide_Side_Panel(QWidget):
             self.chat_clicked.emit(folder_name, chat_title)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     # -------------------------------------------------------------------------
     def on_chat_item_double_clicked(self, item):
@@ -839,6 +950,8 @@ class Slide_Side_Panel(QWidget):
         chat editor area.
         """
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def on_chat_item_double_clicked(self, item):
 
         folder_name, chat_title = item.data(Qt.UserRole)
@@ -848,6 +961,9 @@ class Slide_Side_Panel(QWidget):
 
     # ---------------- New Chat ----------------
     def on_new_chat(self):
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         # Ensure there is an active folder; if not, choose the last folder
         if not self.active_folder:
@@ -868,6 +984,7 @@ class Slide_Side_Panel(QWidget):
     def save_chat_to_folder(self, folder_name, title=None, save_json=True):
         """
 <<<<<<< HEAD
+<<<<<<< HEAD
         Insert a chat row under a folder, optionally persisting an empty JSON
         skeleton on disk. Returns the created `QListWidgetItem` so callers can
         trigger additional behavior (e.g., inline rename).
@@ -876,6 +993,10 @@ class Slide_Side_Panel(QWidget):
             folder_name: Target folder name.
             title: Optional explicit chat title; defaults to timestamp.
             save_json: When True, write a chat JSON file immediately.
+=======
+        Add a chat entry under folder_name in the side panel list.
+        If save_json=True, also save a JSON file on disk.
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         Add a chat entry under folder_name in the side panel list.
         If save_json=True, also save a JSON file on disk.
@@ -927,6 +1048,7 @@ class Slide_Side_Panel(QWidget):
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Right-click menu actions: Rename, Delete, New chat, New folder, Settings
     # -------------------------------------------------------------------------
@@ -935,6 +1057,11 @@ class Slide_Side_Panel(QWidget):
         Build a contextual menu based on the current selection (single folder,
         single chat, or multi-selection) and wire up the relevant actions.
         """
+=======
+    # ---------------- Folder / Chat Menu ----------------
+    # Riggt click menu actions: Rename, Delete, New chat, New folder, Settings
+    def show_context_menu(self, pos):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     # ---------------- Folder / Chat Menu ----------------
     # Riggt click menu actions: Rename, Delete, New chat, New folder, Settings
@@ -976,7 +1103,11 @@ class Slide_Side_Panel(QWidget):
         """)
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         # Only allow delete when multiple items are selected
+=======
+        # 多选时只允许删除，不允许重命名（或只重命名第一个）
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         # 多选时只允许删除，不允许重命名（或只重命名第一个）
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -991,6 +1122,10 @@ class Slide_Side_Panel(QWidget):
                 menu.addAction("Delete", lambda: self.delete_chat(item))
         else:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            # 多选删除
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
             # 多选删除
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -1004,6 +1139,7 @@ class Slide_Side_Panel(QWidget):
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     # -------------------------------------------------------------------------
     def get_selected_items(self):
@@ -1020,12 +1156,17 @@ class Slide_Side_Panel(QWidget):
         specific folder/chat delete handlers.
         """
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def get_selected_items(self):
         """Return list of currently selected QListWidgetItems."""
         return self.history_list.selectedItems()
 
 
     def delete_selected_items(self, items):
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         for item in items:
             folder_name, chat_title = item.data(Qt.UserRole)
@@ -1034,6 +1175,7 @@ class Slide_Side_Panel(QWidget):
             else:
                 self.delete_chat(item)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Folder Rename
@@ -1047,6 +1189,10 @@ class Slide_Side_Panel(QWidget):
     # ---------------- Folder Rename ----------------
     def rename_folder_inline(self,item):
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+    # ---------------- Folder Rename ----------------
+    def rename_folder_inline(self,item):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         folder_name,_ = item.data(Qt.UserRole)
         folder_widget = self.folders[folder_name]["widget"]
         folder_widget.start_rename()
@@ -1054,6 +1200,7 @@ class Slide_Side_Panel(QWidget):
             # when editingFinished fires, folder_widget.name has been updated in finish_inline_edit
             folder_widget.editor.editingFinished.connect(lambda fw=folder_widget,it=item,old=folder_name: self.update_folder_name(it, old, fw.name))
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Stats
@@ -1066,6 +1213,10 @@ class Slide_Side_Panel(QWidget):
     # ---------------- Stats ----------------
     def format_number(self, num):
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+    # ---------------- Stats ----------------
+    def format_number(self, num):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if num >= 1_000_000:
             return f"{num/1_000_000:.1f}M"
         elif num >= 1_000:
@@ -1073,6 +1224,7 @@ class Slide_Side_Panel(QWidget):
         return str(num)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     # -------------------------------------------------------------------------
     def update_tokens(self, tokens, total, today):
@@ -1083,17 +1235,27 @@ class Slide_Side_Panel(QWidget):
     def update_tokens(self, tokens, total, today):
         # Update token stats
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+    def update_tokens(self, tokens, total, today):
+        # Update token stats
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.current_tokens_value.setText(f"{tokens}")
         self.total_tokens_value.setText(f"{self.format_number(total)}")
         self.today_tokens_value.setText(f"{self.format_number(today)}")
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     def refresh_chat_list(self):
         """
         Iterate through folders/chats and trigger lightweight repaints so custom
         widgets pick up any style or icon changes.
+=======
+    def refresh_chat_list(self):
+        """
+        Refresh the chat history UI.
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     def refresh_chat_list(self):
         """
@@ -1107,7 +1269,11 @@ class Slide_Side_Panel(QWidget):
                 widget = self.history_list.itemWidget(chat_item)
                 if widget:
 <<<<<<< HEAD
+<<<<<<< HEAD
                     widget.repaint()  # Use repaint() to force immediate refresh
+=======
+                    widget.repaint()  # <-- 用 repaint() 而不是 update()
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
                     widget.repaint()  # <-- 用 repaint() 而不是 update()
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -1250,12 +1416,16 @@ class Slide_Side_Panel(QWidget):
     # =========================================================================
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     def on_new_folder(self):
         """
         Create a brand-new folder both in the UI list and on disk, then mark it
         as the active folder for immediate use.
         """
+=======
+    def on_new_folder(self):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     def on_new_folder(self):
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -1269,6 +1439,7 @@ class Slide_Side_Panel(QWidget):
         folder_path.mkdir(exist_ok=True)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Update Folder Name
     # -------------------------------------------------------------------------
@@ -1277,6 +1448,10 @@ class Slide_Side_Panel(QWidget):
         Apply a folder rename by updating in-memory dictionaries, list widget
         items, and the on-disk directory if it exists.
         """
+=======
+    # ---------------- Update Folder Name ----------------
+    def update_folder_name(self,item,old_name,new_name):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     # ---------------- Update Folder Name ----------------
     def update_folder_name(self,item,old_name,new_name):
@@ -1303,6 +1478,7 @@ class Slide_Side_Panel(QWidget):
                 print(f"Failed to rename folder {old_name} -> {new_name}: {e}")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Delete Folder
     # -------------------------------------------------------------------------
@@ -1311,6 +1487,10 @@ class Slide_Side_Panel(QWidget):
         Remove a folder header, all of its child chats, and the corresponding
         directory on disk. Also keeps the active folder pointer in sync.
         """
+=======
+    # ---------------- Delete Folder ----------------
+    def delete_folder(self, item):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     # ---------------- Delete Folder ----------------
     def delete_folder(self, item):
@@ -1340,6 +1520,7 @@ class Slide_Side_Panel(QWidget):
             self.active_folder = list(self.folders.keys())[-1] if self.folders else None
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # -------------------------------------------------------------------------
     # Delete Chat
     # -------------------------------------------------------------------------
@@ -1347,6 +1528,10 @@ class Slide_Side_Panel(QWidget):
         """
         Remove a single chat row and delete its persisted JSON file if present.
         """
+=======
+    # ---------------- Delete Chat ----------------
+    def delete_chat(self, item):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     # ---------------- Delete Chat ----------------
     def delete_chat(self, item):
@@ -1374,6 +1559,7 @@ class Slide_Side_Panel(QWidget):
     #-----------------------------------------------------------------------------
     # Update UI texts for localization
 <<<<<<< HEAD
+<<<<<<< HEAD
     #-----------------------------------------------------------------------------
     def update_ui_texts(self, lang_manager):
         """
@@ -1384,12 +1570,22 @@ class Slide_Side_Panel(QWidget):
         """
         更新侧边栏按钮的文字
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+    def update_ui_texts(self, lang_manager):
+        """
+        更新侧边栏按钮的文字
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         """
         if not lang_manager:
             return
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # 1. Update the "New Chat" button label and tooltip
+=======
+        # 1. 更新 "New Chat" 按钮
+        # 注意：这里使用的是我们在 create_icon_button 里绑定的 inner_text_label
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         # 1. 更新 "New Chat" 按钮
         # 注意：这里使用的是我们在 create_icon_button 里绑定的 inner_text_label
@@ -1399,7 +1595,11 @@ class Slide_Side_Panel(QWidget):
             self.btn_new_chat.setToolTip(lang_manager.get_text("Start a new chat"))
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # 2. Update the "New Folder" button label and tooltip
+=======
+        # 2. 更新 "New Folder" 按钮
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         # 2. 更新 "New Folder" 按钮
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -1408,7 +1608,11 @@ class Slide_Side_Panel(QWidget):
             self.btn_new_folder.setToolTip(lang_manager.get_text("Create a new folder"))
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # 3. Update the "Settings" button label and tooltip
+=======
+        # 3. 更新 "Settings" 按钮
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         # 3. 更新 "Settings" 按钮
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -1417,7 +1621,11 @@ class Slide_Side_Panel(QWidget):
             self.btn_settings.setToolTip(lang_manager.get_text("Open settings"))
             
 <<<<<<< HEAD
+<<<<<<< HEAD
         # 4. Update remaining labels such as the chat history section title
+=======
+        # 4. 如果你还有其他的 label (比如 "Chat History" 的标题)，也在这里更新
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         # 4. 如果你还有其他的 label (比如 "Chat History" 的标题)，也在这里更新
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6

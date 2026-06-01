@@ -1,5 +1,6 @@
 #-----------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Purpose: The operation controller for the setting page
 # Programmer: Shanqin Jin
 # Email: sjin@mun.ca
@@ -8,6 +9,8 @@
 
 import sys  # Import system-specific parameters and functions
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 # Purpouse: The operation controller for the setting page
 # Programmer: Shanqin Jin
 # Email: sjin@mun.ca
@@ -15,6 +18,9 @@ import sys  # Import system-specific parameters and functions
 #-----------------------------------------------------------------------
 
 import sys
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 import os
 import webbrowser
@@ -28,6 +34,7 @@ from pathlib import Path
 from urllib.parse import quote_plus
 
 #-----------------------------------------------------------------------
+<<<<<<< HEAD
 <<<<<<< HEAD
 # Import PyQt5 widgets for UI elements
 from PySide6.QtWidgets import ( 
@@ -47,6 +54,8 @@ from PySide6.QtCore import Qt, QSize, QDateTime, Signal, QSettings, QObject, Slo
 #-----------------------------------------------------------------------
 # Import the class from the local python files
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 from PySide6.QtWidgets import (
 QApplication,
 QMainWindow, QTextEdit, QToolBar, QDockWidget, QListWidget, QFileDialog,
@@ -62,19 +71,26 @@ from PySide6.QtCore import Qt, QSize, QDateTime, Signal, QSettings, QObject, Slo
 #-----------------------------------------------------------------------
 
 #-----------------------------------------------------------------------
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 from Utils.Utils import utils
 from Operation.Operation_Mainwindow import Operation_Mainwindow_Controller
 #-----------------------------------------------------------------------
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 #-----------------------------------------------------------------------
 class Operation_Setting_Controller(QObject):
 
     def __init__(self, parent = None):
+<<<<<<< HEAD
 <<<<<<< HEAD
         """
         Controller for applying settings to the main application UI.
@@ -88,6 +104,8 @@ class Operation_Setting_Controller(QObject):
         #-----------------------------------------------------------------------
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.main_window  = parent
         self.setting_page = parent.setting_page
         self.tool_bar     = parent.tool_bar
@@ -96,6 +114,7 @@ class Operation_Setting_Controller(QObject):
 
         self.operation_mainwindow  = Operation_Mainwindow_Controller(self.main_window) 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         #-----------------------------------------------------------------------
         # Get the QSettings file path
@@ -139,11 +158,16 @@ class Operation_Setting_Controller(QObject):
         # ---------------- Font Settings ----------------
         # Apply font settings to all specific windows and their children
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         usr_folder = utils.get_usr_dir()
         self.settings_file_path = usr_folder / "settings.ini"
 
     #-----------------------------------------------------------------------
     def apply_new_settings(self):
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         settings = QSettings(str(self.settings_file_path), QSettings.Format.IniFormat)
 
@@ -154,7 +178,10 @@ class Operation_Setting_Controller(QObject):
 
         Total_windows = [self.main_window, self.setting_page, self.side_panel, self.chat_window, self.tool_bar]
 <<<<<<< HEAD
+<<<<<<< HEAD
         
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         text_widgets = (QTextEdit, QLineEdit, QComboBox, QPushButton, QToolBar,
@@ -171,10 +198,14 @@ class Operation_Setting_Controller(QObject):
         QApplication.instance().setFont(app_font)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # ---------------- Appearance / Theme ----------------
         # Define QSS stylesheets for different themes
         appearance_mode = settings.value("Appearance/theme", "Light")  # Light, Dark, Blue
         
+=======
+        appearance_mode = settings.value("Appearance/theme", "Light")
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         appearance_mode = settings.value("Appearance/theme", "Light")
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -205,7 +236,10 @@ class Operation_Setting_Controller(QObject):
             QMenu::item:selected { background-color: #505050; }
         """
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         blue_qss = """
@@ -220,7 +254,10 @@ class Operation_Setting_Controller(QObject):
             }
         """
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         light_qss = "" 
@@ -233,6 +270,7 @@ class Operation_Setting_Controller(QObject):
 
         if self.main_window:
             self.main_window.setStyleSheet(target_qss)
+<<<<<<< HEAD
 <<<<<<< HEAD
         
         if self.setting_page:
@@ -253,6 +291,8 @@ class Operation_Setting_Controller(QObject):
         # ---------------- Toolbar Icons ----------------
         # Apply toolbar icon visibility settings
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if self.setting_page:
             self.setting_page.setStyleSheet(target_qss)
         QApplication.instance().setStyleSheet(target_qss)
@@ -261,14 +301,20 @@ class Operation_Setting_Controller(QObject):
         if hasattr(self.main_window, "chat_window"):
             self.main_window.chat_window.set_chat_background(background_path)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         show_toolbar_icons = settings.value("Appearance/toolbar_icons", True, type=bool)
         if hasattr(self.main_window, "tool_bar"):
             self.tool_bar.setVisible(show_toolbar_icons)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # ---------------- Language Settings ----------------
         # Apply language settings to the application
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         language_type = settings.value("Language/type", "English")
@@ -278,6 +324,7 @@ class Operation_Setting_Controller(QObject):
 
         if hasattr(self.tool_bar, "update_ui_texts"):
             self.tool_bar.update_ui_texts(self.main_window.language_manager)
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         if hasattr(self.chat_window, "update_ui_texts"):
@@ -295,6 +342,8 @@ class Operation_Setting_Controller(QObject):
         use_google = settings.value("Search/Google", False, type=bool)
 
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if hasattr(self.chat_window, "update_ui_texts"):
             self.chat_window.update_ui_texts(self.main_window.language_manager)
         if hasattr(self.side_panel, "update_ui_texts"):
@@ -304,11 +353,15 @@ class Operation_Setting_Controller(QObject):
 
         use_baidu  = settings.value("Search/Baidu", True, type=bool)
         use_google = settings.value("Search/Google", False, type=bool)
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         try:
             self.tool_bar.search_requested.disconnect()
         except (TypeError, RuntimeError):
             pass
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         if use_baidu and not use_google:
@@ -357,6 +410,8 @@ class Operation_Setting_Controller(QObject):
 
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if use_baidu and not use_google:
             self.tool_bar.search_requested.connect(self.operation_mainwindow.perform_baidu_search)
         elif use_google and not use_baidu:
@@ -364,6 +419,7 @@ class Operation_Setting_Controller(QObject):
         else:
             self.tool_bar.search_requested.connect(self.operation_mainwindow.perform_baidu_search)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         ## ---------------- AI Settings ----------------
         # Apply AI configuration settings
@@ -390,6 +446,8 @@ class Operation_Setting_Controller(QObject):
             ai_ctrls = self.setting_page.controls["AI"]
             # Base URL
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if hasattr(self.main_window, "chat_controller"):
             current_model = self.tool_bar.get_current_AI_model()
             self.main_window.chat_controller.update_model_for_chat_controller(current_model, None)
@@ -397,13 +455,20 @@ class Operation_Setting_Controller(QObject):
         if hasattr(self.setting_page, "controls") and "AI" in self.setting_page.controls:
             ai_ctrls = self.setting_page.controls["AI"]
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             if "base_url" in ai_ctrls:
                 default_url = "https://openrouter.ai/api/v1/chat/completions"
                 saved_url = settings.value("AI/base_url", default_url)
                 ai_ctrls["base_url"].setText(saved_url)
 <<<<<<< HEAD
+<<<<<<< HEAD
             # System Prompt
+=======
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -411,6 +476,7 @@ class Operation_Setting_Controller(QObject):
                 default_prompt = "You are a helpful assistant."
                 saved_prompt = settings.value("AI/system_prompt", default_prompt)
                 ai_ctrls["system_prompt"].setPlainText(saved_prompt)
+<<<<<<< HEAD
 <<<<<<< HEAD
             # Provider combo
             if "provider" in ai_ctrls:
@@ -459,6 +525,8 @@ class Operation_Setting_Controller(QObject):
             chat.update_model_for_chat_controller(self.main_window.tool_bar.get_current_AI_model(), None)
             print("[INFO] AI Chat Controller settings updated.")
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
             if "provider" in ai_ctrls:
                 saved_provider = settings.value("AI/provider", "openrouter").lower().strip()
@@ -482,5 +550,8 @@ class Operation_Setting_Controller(QObject):
             if "temperature" in ai_ctrls:
                 saved_temp = float(settings.value("AI/temperature", 0.7))
                 ai_ctrls["temperature"].setValue(int(saved_temp * 10))
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     #-----------------------------------------------------------------------

@@ -1,6 +1,10 @@
 #-----------------------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Purpose: This file is used to create the main window of the application
+=======
+# Purpouse: This file is used to create the main window of the application
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 # Purpouse: This file is used to create the main window of the application
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -13,8 +17,11 @@ import sys
 import os
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #-----------------------------------------------------------------------------------------
 # Import PyQt5 widgets for UI elements
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 from PySide6.QtWidgets import ( 
@@ -29,6 +36,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtGui import QPixmap, QFont, QIcon, QPainter
 from PySide6.QtCore import Qt, QSize, QTimer, Signal, QSettings, QEvent, QPropertyAnimation
+<<<<<<< HEAD
 <<<<<<< HEAD
 #-----------------------------------------------------------------------------------------
 
@@ -47,12 +55,17 @@ if __name__ == "__main__":
 #-----------------------------------------------------------------------------------------
 
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
 if __name__ == "__main__": 
     print("Debug mode!")   
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     if project_root not in sys.path: sys.path.insert(0, project_root)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 from Utils.Utils import utils
 from GUI.Item_Toolbar import Tool_Bar
@@ -66,9 +79,12 @@ from Operation.Operation_Setting import Operation_Setting_Controller
 from Operation.Operation_Chat_Controller import Operation_Chat_Controller
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #-----------------------------------------------------------------------------------------
 # Initialize the main application class
 #-----------------------------------------------------------------------------------------
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 class AI_Chat_App(QMainWindow):
@@ -77,6 +93,7 @@ class AI_Chat_App(QMainWindow):
 
         super().__init__()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         # ========================== Initialize Managers =============================
         # Initialize the language manager and settings
@@ -149,6 +166,8 @@ class AI_Chat_App(QMainWindow):
         # Helper function: Set default values if a key does not exist
         # This handles both "fresh installations" and "upgrades from older versions" (missing new fields)
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.language_manager = Language_Manager()
         self.settings = None
 
@@ -172,14 +191,20 @@ class AI_Chat_App(QMainWindow):
         
         settings = QSettings(str(settings_path), QSettings.Format.IniFormat)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         def check_and_set_default(key, default_value):
             if not settings.contains(key):
                 settings.setValue(key, default_value)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         #---------------------------------------------------------------------------------
         # Check if this is the first run (settings file does not exist)
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         is_first_run = not settings_path.exists()
@@ -188,9 +213,12 @@ class AI_Chat_App(QMainWindow):
             print("[INFO] No settings.ini found. Creating default settings...")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         #---------------------------------------------------------------------------------
         # --- Font & Appearance ---
         # Default font supports Chinese to prevent garbled text
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         check_and_set_default("Font/type", "Microsoft YaHei") 
@@ -199,6 +227,7 @@ class AI_Chat_App(QMainWindow):
         check_and_set_default("Appearance/theme", "Light")
         check_and_set_default("Appearance/toolbar_icons", True)
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Background image path (default is empty)
         check_and_set_default("Appearance/chat_background", "") 
@@ -216,6 +245,8 @@ class AI_Chat_App(QMainWindow):
         # --- AI Settings & Migration ---
         # 1. Attempt to migrate old data (Advanced -> AI)
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         check_and_set_default("Appearance/chat_background", "") 
 
         check_and_set_default("Language/type", "English")
@@ -223,11 +254,15 @@ class AI_Chat_App(QMainWindow):
         check_and_set_default("Search/Baidu", True)
         check_and_set_default("Search/Google", False)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         old_key = settings.value("Advanced/api_key", "")
         if old_key and not settings.contains("AI/api_key"):
             print("[INFO] Migrating old API Key to new AI settings structure...")
             settings.setValue("AI/api_key", old_key)
+<<<<<<< HEAD
 <<<<<<< HEAD
             settings.remove("Advanced") # Clean up old group
         
@@ -298,6 +333,8 @@ class AI_Chat_App(QMainWindow):
         #---------------------------------------------------------------------------------
         # Save the settings after all checks
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             settings.remove("Advanced")
         
         usr_dir = utils.get_usr_dir()
@@ -344,6 +381,9 @@ class AI_Chat_App(QMainWindow):
         check_and_set_default("AI/system_prompt", "You are a helpful assistant.")
         check_and_set_default("AI/temperature", 0.7)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         settings.sync()
         self.settings = settings
@@ -353,6 +393,7 @@ class AI_Chat_App(QMainWindow):
         else:
             print(f"[INFO] Settings loaded from: {settings_path}")
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         #---------------------------------------------------------------------------------
         # Apply settings to the application UI
@@ -368,16 +409,22 @@ class AI_Chat_App(QMainWindow):
         #---------------------------------------------------------------------------------
         # Signal from the tool bar in the main window
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if hasattr(self, "operation_setting"):
             self.operation_setting.apply_new_settings()
 
     def connect_signals(self):
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.tool_bar.show_side_panel_requested.connect(self.toggle_side_panel)
         self.tool_bar.show_setting_page_requested.connect(self.operation_mainwindow.handle_show_setting)
         self.side_panel.show_settings_requested.connect(self.operation_mainwindow.handle_show_setting)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Model change signal for both chat controller and worker
         self.tool_bar.model_changed_signal.connect(self.operation_chat.update_model_for_chat_controller)
@@ -390,17 +437,23 @@ class AI_Chat_App(QMainWindow):
         #---------------------------------------------------------------------------------
         # Signal from the chat window
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.tool_bar.model_changed_signal.connect(self.operation_chat.worker.update_config)
         self.tool_bar.model_changed_signal.connect(self.operation_chat.update_model_for_chat_controller)
 
         self.side_panel.new_chat_requested.connect(self.operation_chat.handle_new_chat)
         self.side_panel.chat_item_double_clicked.connect(self.operation_chat.handle_open_chat_file)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.chat_window.show_setting_page_requested_from_chatwindow.connect(self.operation_mainwindow.handle_show_setting)
         self.chat_window.new_chat_requested_from_chatwindow.connect(self.side_panel.on_new_chat)
         self.chat_window.new_folder_requested_from_chatwindow.connect(self.side_panel.on_new_folder)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         #---------------------------------------------------------------------------------
         # Get the QSettings file path
@@ -414,10 +467,16 @@ class AI_Chat_App(QMainWindow):
         settings_file_path = usr_folder / "settings.ini"
 
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+        usr_folder = utils.get_usr_dir()    
+        settings_file_path = usr_folder / "settings.ini"
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         settings   = QSettings(str(settings_file_path), QSettings.Format.IniFormat)
         use_baidu  = settings.value("Search/Baidu", True, type=bool)
         use_google = settings.value("Search/Google", False, type=bool)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         #---------------------------------------------------------------------------------
         # Connect signal from the search button
@@ -430,17 +489,23 @@ class AI_Chat_App(QMainWindow):
 
         # Connect signal from the search button
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         try:
             self.tool_bar.search_requested.disconnect()
         except TypeError:
             pass
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if use_baidu and not use_google:
             self.tool_bar.search_requested.connect(self.operation_mainwindow.perform_baidu_search)
         elif use_google and not use_baidu:
             self.tool_bar.search_requested.connect(self.operation_mainwindow.perform_google_search)
         else:
+<<<<<<< HEAD
 <<<<<<< HEAD
             self.tool_bar.search_requested.connect(self.operation_mainwindow.perform_baidu_search)  # default
 
@@ -480,6 +545,8 @@ class AI_Chat_App(QMainWindow):
         # Use the external Tool_Bar class to create the tool bar
         self.tool_bar = Tool_Bar(self)                # Initialize the tool bar with the tool bar class
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             self.tool_bar.search_requested.connect(self.operation_mainwindow.perform_baidu_search)
 
         self.setting_page.apply_settings_signal.connect(self.operation_setting.apply_new_settings)
@@ -493,12 +560,16 @@ class AI_Chat_App(QMainWindow):
         self.setWindowIcon(QIcon(utils.resource_path("images/AIchat_Combo_Logo.jpeg")))
 
         self.tool_bar = Tool_Bar(self)
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.tool_bar.setMovable(False)
         self.tool_bar.setMaximumHeight(32)
         self.tool_bar.setIconSize(QSize(24, 24))
 
         self.addToolBar(self.tool_bar)
+<<<<<<< HEAD
 <<<<<<< HEAD
         #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -514,11 +585,17 @@ class AI_Chat_App(QMainWindow):
         self.chat_window = Chat_Central_Widget()
 
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+
+        self.chat_window = Chat_Central_Widget()
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.drag_handle = QWidget()
         self.drag_handle.setFixedWidth(5)
         self.drag_handle.setCursor(Qt.SizeHorCursor)
         self.drag_handle.setStyleSheet("background: #F5F5F5;")
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Connect handle mouse events
         self.drag_handle.mousePressEvent   = self.handle_mouse_press
@@ -536,6 +613,8 @@ class AI_Chat_App(QMainWindow):
         # Create a widget to hold the main layout, as central widget only accepts widget type
         main_widget = QWidget()              
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.drag_handle.mousePressEvent   = self.handle_mouse_press
         self.drag_handle.mouseMoveEvent    = self.handle_mouse_move
         self.drag_handle.mouseReleaseEvent = self.handle_mouse_release
@@ -543,6 +622,9 @@ class AI_Chat_App(QMainWindow):
         self.side_panel = Slide_Side_Panel(self)
 
         main_widget = QWidget()
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         main_widget.setContentsMargins(0, 0, 0, 0)
 
@@ -553,6 +635,7 @@ class AI_Chat_App(QMainWindow):
         main_layout.addWidget(self.side_panel)
         main_layout.addWidget(self.drag_handle)
         main_layout.addWidget(self.chat_window)
+<<<<<<< HEAD
 <<<<<<< HEAD
         main_layout.setStretch(0, 28)  # side panel 28%
         main_layout.setStretch(2, 70)  # central widget 70%
@@ -568,6 +651,8 @@ class AI_Chat_App(QMainWindow):
     # ---------------------------------------------------------------------------------
     # Function to toggle the visibility of the side panel
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         main_layout.setStretch(0, 28)
         main_layout.setStretch(2, 70)
 
@@ -575,6 +660,9 @@ class AI_Chat_App(QMainWindow):
 
         self.setCentralWidget(main_widget)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def toggle_side_panel(self):
         panel = self.side_panel
@@ -582,11 +670,17 @@ class AI_Chat_App(QMainWindow):
 
         if currently_visible:
 <<<<<<< HEAD
+<<<<<<< HEAD
             # Collapse
             panel.full_width = panel.width()
             target_width = 0
         else:
             # Expand to a reasonable width
+=======
+            panel.full_width = panel.width()
+            target_width = 0
+        else:
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
             panel.full_width = panel.width()
             target_width = 0
@@ -610,6 +704,7 @@ class AI_Chat_App(QMainWindow):
         panel._anim = anim
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # ---------------------------------------------------------------------------------
 
     # ---------------------------------------------------------------------------------
@@ -625,6 +720,8 @@ class AI_Chat_App(QMainWindow):
     def handle_mouse_move(self, event):
         # Adjust the width of the side panel dynamically during drag
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def handle_mouse_press(self, event):
         self.drag_start_x = event.globalPosition().x()
         self.start_width = self.side_panel.width()
@@ -632,6 +729,9 @@ class AI_Chat_App(QMainWindow):
 
     def handle_mouse_move(self, event):
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         dx = event.globalPosition().x() - self.drag_start_x
         new_width = self.start_width + dx
@@ -644,7 +744,11 @@ class AI_Chat_App(QMainWindow):
             self.side_panel.is_visible = False
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             self.side_panel.full_width = self.start_width  # Save the initial width for next time
+=======
+            self.side_panel.full_width = self.start_width
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
             self.side_panel.full_width = self.start_width
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -658,23 +762,30 @@ class AI_Chat_App(QMainWindow):
             self.side_panel.is_visible = True
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             self.side_panel.full_width = new_width        # Save the new width for next time
 
         # Debounce: restart timer on each move, update only after 50ms of inactivity
         self.drag_debounce_timer.stop()
         self.drag_debounce_timer.start()
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             self.side_panel.full_width = new_width
 
         self.chat_window.adjust_input_height()
 
         if hasattr(self, "operation_chat"):
             self.operation_chat._update_all_bubbles_width()
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
         event.accept()
 
     def handle_mouse_release(self, event):
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Stop the debounce timer and force immediate update
         self.drag_debounce_timer.stop()
@@ -705,6 +816,8 @@ class AI_Chat_App(QMainWindow):
 
         # Adjust the height of the text input and input container
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.side_panel.panel_width = self.side_panel.width()
         event.accept()
 
@@ -712,11 +825,15 @@ class AI_Chat_App(QMainWindow):
 
         super().resizeEvent(event)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.chat_window.adjust_input_height()
         self.chat_window.update_input_container_position()
 
         if hasattr(self, "operation_chat"):
+<<<<<<< HEAD
 <<<<<<< HEAD
             QTimer.singleShot(0, self.operation_chat.update_all_bubbles_width)
     # ---------------------------------------------------------------------------------
@@ -739,6 +856,8 @@ class AI_Chat_App(QMainWindow):
                 padding: 2px 5px 2px 5px;   /* Space for text, order is top right bottom left */
                 padding-left: 5px;     /* Space for magnifying glass icon */
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             QTimer.singleShot(0, self.operation_chat._update_all_bubbles_width)
 
     def init_styles(self):
@@ -755,6 +874,9 @@ class AI_Chat_App(QMainWindow):
             QLineEdit {
                 padding: 2px 5px 2px 5px;
                 padding-left: 5px;
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 border: 1px solid #ccc;
                 border-radius: 3px;
@@ -764,6 +886,7 @@ class AI_Chat_App(QMainWindow):
             }
             QLineEdit:focus {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 border: 1px solid #0078d4; /* VS Code blue highlight */
             }
             QtoolBar::item {
@@ -772,6 +895,8 @@ class AI_Chat_App(QMainWindow):
                 color: black;                           /* Text color */
                 qproperty-alignment: 'AlignCenter';     /* Center the text */
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 border: 1px solid #0078d4;
             }
             QtoolBar::item {
@@ -779,11 +904,15 @@ class AI_Chat_App(QMainWindow):
                 background: transparent;
                 color: black;
                 qproperty-alignment: 'AlignCenter';
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             }
             QtoolBar::item:selected {
                 background: qlineargradient(
                     x1:0, y1:0, x2:0, y2:1,
+<<<<<<< HEAD
 <<<<<<< HEAD
                     stop:0 #FFFFFF,     /* top white */
                     stop:1 #FFF0F0      /* bottom pale cyan --- #C7ECFF; grey --- #C0C0C0 */
@@ -793,18 +922,24 @@ class AI_Chat_App(QMainWindow):
             }
             /* Drop-down tools */
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                     stop:0 #FFFFFF,
                     stop:1 #FFF0F0
                 );
                 color: black;
                 border-radius: 3px;
             }
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             Qtool::item {
                 padding: 5px 20px;
                 background-color: white;
                 color: black;
             }
+<<<<<<< HEAD
 <<<<<<< HEAD
             /* Hover effect for tool items */
             Qtool::item:selected {
@@ -827,6 +962,8 @@ class AI_Chat_App(QMainWindow):
                 background: transparent;
                 width: 10px;                /* thickness */
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             Qtool::item:selected {
                 background: qlineargradient(
                     x1:0, y1:0, x2:0, y2:1,
@@ -844,13 +981,20 @@ class AI_Chat_App(QMainWindow):
             QScrollBar:vertical {
                 background: transparent;
                 width: 10px;
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 margin: 4px 2px 4px 2px;
                 border-radius: 8px;
             }
             QScrollBar::handle:vertical {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 background: rgba(0,0,0,0.25);   /* subtle gray */
+=======
+                background: rgba(0,0,0,0.25);
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
                 background: rgba(0,0,0,0.25);
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -859,17 +1003,23 @@ class AI_Chat_App(QMainWindow):
             }
             QScrollBar::handle:vertical:hover {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 background: rgba(0,0,0,0.45);   /* darker on hover */
             }
             QScrollBar::add-line:vertical,
             QScrollBar::sub-line:vertical {
                 height: 0px;   /* hide arrows */
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 background: rgba(0,0,0,0.45);
             }
             QScrollBar::add-line:vertical,
             QScrollBar::sub-line:vertical {
                 height: 0px;
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             }
             QScrollBar::add-page:vertical,
@@ -877,6 +1027,7 @@ class AI_Chat_App(QMainWindow):
                 background: none;
             }           
         """)
+<<<<<<< HEAD
 <<<<<<< HEAD
     # ------------------------------------------------------------------------------
 
@@ -889,5 +1040,7 @@ class AI_Chat_App(QMainWindow):
 #     win.show()
 #     app.exec()
 #-----------------------------------------------------------------------------------
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6

@@ -1,7 +1,11 @@
 #-----------------------------------------------------------------------------------------
 # Purpouse: This file contains various utility functions for file path handling,
 <<<<<<< HEAD
+<<<<<<< HEAD
 #           text formatting, filename sanitization, and LaTeX/Math rendering.
+=======
+#           text formatting, and filename sanitization.
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 #           text formatting, and filename sanitization.
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -12,6 +16,7 @@
 
 import sys
 import re
+<<<<<<< HEAD
 <<<<<<< HEAD
 import io
 import base64
@@ -94,6 +99,10 @@ class LatexFetchThread(QThread):
                 retry_delay = min(retry_delay * 1.5, CODECOGS_RETRY_MAX_SEC)
 
 
+=======
+from pathlib import Path
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 from pathlib import Path
 
@@ -196,6 +205,7 @@ class utils:
         return folder_path / f"{safe_title}.json"
 
     #--------------------------------------------------------------
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     # ================================================================
@@ -453,5 +463,7 @@ class utils:
             flags=re.DOTALL
         )
     #--------------------------------------------------------------
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6

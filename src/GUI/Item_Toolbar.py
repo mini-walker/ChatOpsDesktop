@@ -13,7 +13,11 @@ import json
 
 from PySide6.QtWidgets import (
 <<<<<<< HEAD
+<<<<<<< HEAD
     QWidget, QHBoxLayout, QComboBox, QLineEdit, QToolButton, QFrame, QToolBar, QSizePolicy, QMessageBox, QStyle, QLabel
+=======
+    QWidget, QHBoxLayout, QComboBox, QLineEdit, QToolButton, QFrame, QToolBar, QSizePolicy, QMessageBox, QStyle
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     QWidget, QHBoxLayout, QComboBox, QLineEdit, QToolButton, QFrame, QToolBar, QSizePolicy, QMessageBox, QStyle
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -48,7 +52,10 @@ class Tool_Bar(QToolBar):
     show_side_panel_requested   = Signal()
     show_setting_page_requested = Signal()
 <<<<<<< HEAD
+<<<<<<< HEAD
     connection_test_signal      = Signal(bool, str)  # (success, message)
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
@@ -64,6 +71,10 @@ class Tool_Bar(QToolBar):
         self.setObjectName("Tool_Bar")              # The object name
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -72,6 +83,7 @@ class Tool_Bar(QToolBar):
     # ------------------------------------------------------------------
     def init_toolbar_ui(self):
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Adjust spacing between toolbar widgets
         layout = self.layout()
@@ -84,15 +96,26 @@ class Tool_Bar(QToolBar):
         # If you want to create a vertical toolbar, you need to set the orientation to Qt.Vertical
         # self.setOrientation(Qt.Vertical)
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+        # The default toolbar layout is horizontal,
+        # If you want to create a vertical toolbar, you need to set the orientation to Qt.Vertical
+        # self.setOrientation(Qt.Vertical)
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
         #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         # Set the tool button for side panel
         self.btn_sidepanel = QToolButton()
         self.btn_sidepanel.setIcon(QIcon(utils.resource_path("images/WIN11-Icons/icons8-menu-100.png")))
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.btn_sidepanel.setObjectName("Side_Panel_Button_Toolbar")
         self.btn_sidepanel.setIconSize(QSize(24, 24))
         self.btn_sidepanel.setToolTip("Toggle Side Panel")
+=======
+        self.btn_sidepanel.setIconSize(QSize(24, 24))
+        self.btn_sidepanel.setToolTip("Show/Hide Side Panel")
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         self.btn_sidepanel.setIconSize(QSize(24, 24))
         self.btn_sidepanel.setToolTip("Show/Hide Side Panel")
@@ -105,6 +128,7 @@ class Tool_Bar(QToolBar):
 
 
         #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Load all configs from usr/account.json
         usr_dir = utils.get_usr_dir()
@@ -190,6 +214,8 @@ class Tool_Bar(QToolBar):
         self.provider_box.setStyleSheet(provider_qss)
 
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         # ComboBox: AI Engine selection
         self.AI_engine_box = QComboBox()
 
@@ -253,6 +279,9 @@ class Tool_Bar(QToolBar):
         print(f"[DEBUG] Loading arrow from: {arrow_path}")
 
         arrow_path = arrow_path.replace("\\", "/")
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.AI_engine_box.setStyleSheet(f"""
             QComboBox {{
@@ -287,6 +316,7 @@ class Tool_Bar(QToolBar):
                 color: black;                   /* Hover text color */
             }}
         """)
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         # Populate model items initially
@@ -331,6 +361,11 @@ class Tool_Bar(QToolBar):
 
 
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         # Google Search box
         self.search_input = QLineEdit()
@@ -353,7 +388,11 @@ class Tool_Bar(QToolBar):
 
         # create an icon for google
 <<<<<<< HEAD
+<<<<<<< HEAD
         google_icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-google-100.png"))  # the logo path
+=======
+        google_icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-google-100.png"))  # 你的logo路径
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         google_icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-google-100.png"))  # 你的logo路径
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -368,6 +407,11 @@ class Tool_Bar(QToolBar):
         #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 
 
@@ -389,6 +433,7 @@ class Tool_Bar(QToolBar):
         # Add widgets
         self.addWidget(self.btn_sidepanel)
 <<<<<<< HEAD
+<<<<<<< HEAD
         # Provider label and combo
         self.addWidget(self.lbl_provider)
         self.addSeparator()
@@ -400,6 +445,9 @@ class Tool_Bar(QToolBar):
         self.addWidget(self.AI_engine_box)
         self.addSeparator()
         self.addWidget(test_connection_container)
+=======
+        self.addWidget(self.AI_engine_box)
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         self.addWidget(self.AI_engine_box)
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -429,6 +477,7 @@ class Tool_Bar(QToolBar):
         print("Toolbar: emit show setting dialog signal")
         self.show_setting_page_requested.emit()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     def _on_test_connection_clicked(self):
         """Handle test connection button click from toolbar"""
@@ -544,6 +593,8 @@ class Tool_Bar(QToolBar):
             print("[WARNING] emit_model_changed: index out of bounds.")
             return
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def get_current_AI_model(self):
         print("[INFO] Current AI model selected:", self.models[self.AI_engine_box.currentIndex()])
         return self.models[self.AI_engine_box.currentIndex()]
@@ -554,6 +605,9 @@ class Tool_Bar(QToolBar):
 
     def emit_model_changed(self, new_model_index):
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         new_model = self.models[new_model_index]
         model_icon = self.model_icons[new_model_index]
@@ -563,6 +617,7 @@ class Tool_Bar(QToolBar):
     # ------------------------------------------------------------------
 
     # ------------------------------------------------------------------
+<<<<<<< HEAD
 <<<<<<< HEAD
     def emit_provider_changed(self, new_provider_index):
         """
@@ -776,6 +831,8 @@ class Tool_Bar(QToolBar):
         else:
             self.model_changed_signal.emit("", QIcon())
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def load_AI_config(self, config_path):
         """
         Load OpenRouter configuration from a JSON file.
@@ -830,6 +887,9 @@ class Tool_Bar(QToolBar):
             return None, None
 
         return AI_provider, base_url, api_key, list(models)
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     # ------------------------------------------------------------------
 

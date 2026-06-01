@@ -57,12 +57,17 @@ from Operation.Operation_Bubble_Message import BubbleMessage
 
 class AspectRatioLabel(QLabel):
 <<<<<<< HEAD
+<<<<<<< HEAD
     """
     Custom Label: Solves GIF looping jitter and implements CSS Cover (fill) effect.
     """
     def __init__(self, parent=None):
         super().__init__(parent)
         # Ignore layout size constraints
+=======
+    def __init__(self, parent=None):
+        super().__init__(parent)
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -103,6 +108,7 @@ class AspectRatioLabel(QLabel):
             img_w = current_pix.width()
             img_h = current_pix.height()
 <<<<<<< HEAD
+<<<<<<< HEAD
             if img_w == 0 or img_h == 0: return
 
             # Cover algorithm: take the maximum scaling ratio
@@ -112,6 +118,8 @@ class AspectRatioLabel(QLabel):
             
             # Draw centered
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             if img_w == 0 or img_h == 0:
                 return
 
@@ -119,6 +127,9 @@ class AspectRatioLabel(QLabel):
             new_w = int(img_w * ratio)
             new_h = int(img_h * ratio)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             x = (win_w - new_w) // 2
             y = (win_h - new_h) // 2
@@ -141,6 +152,7 @@ class Chat_Central_Widget(QWidget):
     def __init__(self, parent=None):
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         super().__init__(parent)
 
@@ -153,6 +165,8 @@ class Chat_Central_Widget(QWidget):
 
         # self.setAttribute(Qt.WA_StyledBackground, True)
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         super().__init__(parent)
 
         self._last_send_time = 0
@@ -160,21 +174,28 @@ class Chat_Central_Widget(QWidget):
 
         self.main_window = parent
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.setStyleSheet("background-color: #F5F5F5;")
 
         self.pending_images = []
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         #-------------------------------------------------------------------------
         # Initialize the main layout
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         main_layout = QVBoxLayout(self)
         main_layout.setContentsMargins(0, 0, 0, 0)
         main_layout.setSpacing(0)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         # ============================================================
         # [Core Modification] Create a stacked layout container
@@ -219,6 +240,8 @@ class Chat_Central_Widget(QWidget):
         # ---------------- Layer 2: Message Scrolling Layer (Top) ----------------
         # 1. 初始化 Scroll Area
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.stack_container = QWidget()
         self.stack_layout = QStackedLayout(self.stack_container)
         self.stack_layout.setStackingMode(QStackedLayout.StackAll)
@@ -243,6 +266,9 @@ class Chat_Central_Widget(QWidget):
         self.resize_timer.setInterval(100)
         self.resize_timer.timeout.connect(self._perform_high_quality_scale)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.scroll_area = QScrollArea()
         self.scroll_area.setWidgetResizable(True)
@@ -251,6 +277,7 @@ class Chat_Central_Widget(QWidget):
         self.scroll_area.setFrameShape(QFrame.NoFrame)
         self.scroll_area.viewport().setStyleSheet("background: transparent;")
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         # 2. [Key] Set fully transparent styling
         # We must make scroll-area, viewport, and widget transparent for the background image to show through
@@ -266,6 +293,8 @@ class Chat_Central_Widget(QWidget):
             
             /* Scrollbar styling (keep original) */
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.scroll_area.setStyleSheet("""
             QScrollArea {
                 background: transparent;
@@ -274,6 +303,9 @@ class Chat_Central_Widget(QWidget):
             QScrollArea > QWidget > QWidget { 
                 background: transparent; 
             }
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             QScrollBar:vertical {
                 background: transparent;
@@ -294,7 +326,10 @@ class Chat_Central_Widget(QWidget):
         """)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # 3. 初始化内容容器
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.result_container = QWidget()
@@ -305,7 +340,10 @@ class Chat_Central_Widget(QWidget):
         self.result_layout.setSpacing(10)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # 底部缓冲
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.bottom_buffer = QWidget()
@@ -314,6 +352,7 @@ class Chat_Central_Widget(QWidget):
         self.result_layout.addWidget(self.bottom_buffer)
         self.result_layout.addStretch()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         # 装载控件
         self.scroll_area.setWidget(self.result_container)
@@ -335,6 +374,8 @@ class Chat_Central_Widget(QWidget):
         # Floating window for input container, it is a rounded QFrame
         # The image, text input and send button will be put in this container
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.scroll_area.setWidget(self.result_container)
         
         self.stack_layout.insertWidget(1, self.scroll_area)
@@ -342,6 +383,9 @@ class Chat_Central_Widget(QWidget):
 
         main_layout.addWidget(self.stack_container)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.input_container = QFrame(self)
         self.input_container.setObjectName("Chat_Input_Container")
@@ -350,7 +394,11 @@ class Chat_Central_Widget(QWidget):
                 background-color: #FFFFFF;
                 border-radius: 12px;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 padding: 6px 3px 6px 6px;  /* top right bottom left */
+=======
+                padding: 6px 3px 6px 6px;
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
                 padding: 6px 3px 6px 6px;
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -360,6 +408,7 @@ class Chat_Central_Widget(QWidget):
         self.input_min_height = 40
         self.input_max_height = 120
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Adjust the minimum and maximum height of the input container
         self.input_container.setMinimumHeight(self.input_min_height)
@@ -371,6 +420,8 @@ class Chat_Central_Widget(QWidget):
 
         # The text input
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.input_container.setMinimumHeight(self.input_min_height)
         self.input_container.setMaximumHeight(self.input_max_height)
 
@@ -378,6 +429,9 @@ class Chat_Central_Widget(QWidget):
         input_container_layout.setContentsMargins(0, 0, 0, 0)
         input_container_layout.setContentsMargins(0, 0, 0, 6)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.chat_line_edit = QTextEdit()
         self.chat_line_edit.setPlaceholderText("Ask anything...")
@@ -389,7 +443,11 @@ class Chat_Central_Widget(QWidget):
                 font-size: 13pt;
                 line-height: 1.5;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 padding: 0px 0px 0px 0px;   /* left, top, right, bottom */
+=======
+                padding: 0px 0px 0px 0px;
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
                 padding: 0px 0px 0px 0px;
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -398,6 +456,7 @@ class Chat_Central_Widget(QWidget):
                 background: transparent;
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
             /* the vertical scroll bar */
             QScrollBar:vertical {
                 border: none;
@@ -405,11 +464,16 @@ class Chat_Central_Widget(QWidget):
                 width: 8px;                    /* the width of the scroll bar */
                 margin: 0px 0px 14px 0;   /* top right bottom left */
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             QScrollBar:vertical {
                 border: none;
                 background: transparent;
                 width: 8px;
                 margin: 0px 0px 14px 0;
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 border-radius: 4px;
             }
@@ -429,7 +493,10 @@ class Chat_Central_Widget(QWidget):
                 background: none;
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
             /* the horizontal scroll bar (optional) */
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             QScrollBar:horizontal {
@@ -455,6 +522,7 @@ class Chat_Central_Widget(QWidget):
         self.chat_line_edit.textChanged.connect(self.adjust_input_height)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
         # Change enter to shift + enter
@@ -476,19 +544,28 @@ class Chat_Central_Widget(QWidget):
         # Floating button toolbar container
         #++++++++++++++++++++++++++++++++++++++++
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.chat_line_edit.installEventFilter(self)
         self.chat_line_edit.setContextMenuPolicy(Qt.CustomContextMenu)
         self.chat_line_edit.customContextMenuRequested.connect(self.show_context_menu)
 
         input_container_layout.addWidget(self.chat_line_edit)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.floating_toptoolbar = QFrame(self)
         self.floating_toptoolbar.setObjectName("floatingtoptoolbar")
         self.floating_toptoolbar.setStyleSheet("""
             QFrame#floatingtoptoolbar {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 background: transparent;   /* green rgba(0, 255, 0, 0.2) for debug, change to transparent when done */
+=======
+                background: transparent;
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
                 background: transparent;
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -499,6 +576,7 @@ class Chat_Central_Widget(QWidget):
         self.floating_toptoolbar.setMinimumWidth(self.result_container.width())
 
         toptoolbar_layout = QHBoxLayout(self.floating_toptoolbar)
+<<<<<<< HEAD
 <<<<<<< HEAD
         toptoolbar_layout.setContentsMargins(0, 0, 0, 0) # left, top, right, bottom
         toptoolbar_layout.setSpacing(0)
@@ -514,6 +592,8 @@ class Chat_Central_Widget(QWidget):
             btn.setText(text)
             btn.setMinimumWidth(100)  # prevent being squeezed
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         toptoolbar_layout.setContentsMargins(0, 0, 0, 0)
         toptoolbar_layout.setSpacing(0)
 
@@ -523,6 +603,9 @@ class Chat_Central_Widget(QWidget):
             btn.setIconSize(QSize(20, 20))
             btn.setText(text)
             btn.setMinimumWidth(100)
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             btn.setStyleSheet("""
                 QPushButton {
@@ -538,7 +621,10 @@ class Chat_Central_Widget(QWidget):
             return btn
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # Buttons
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.btn_new_folder  = make_btn("images/WIN11-Icons/icons8-folder-100.png", "New folder")
@@ -546,6 +632,7 @@ class Chat_Central_Widget(QWidget):
         self.btn_image       = make_btn("images/WIN11-Icons/icons8-add-image-100.png", "Insert image")
         self.btn_settings    = make_btn("images/WIN11-Icons/icons8-settings-100.png", "Settings")
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Connect button signals
         self.btn_image.clicked.connect(self.insert_image)
@@ -563,16 +650,22 @@ class Chat_Central_Widget(QWidget):
 
         # Add to layout
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.btn_image.clicked.connect(self.insert_image)
         self.btn_new_chat.clicked.connect(self.new_chat_requested_from_chatwindow.emit)
         self.btn_new_folder.clicked.connect(self.new_folder_requested_from_chatwindow.emit)
         self.btn_settings.clicked.connect(self.show_setting_page_requested_from_chatwindow.emit)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         toptoolbar_layout.addWidget(self.btn_new_folder)
         toptoolbar_layout.addWidget(self.btn_new_chat)
         toptoolbar_layout.addWidget(self.btn_image)
         toptoolbar_layout.addWidget(self.btn_settings)
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         # Send History checkbox (default: unchecked = no history sent)
@@ -614,11 +707,16 @@ class Chat_Central_Widget(QWidget):
             if isinstance(btn, QPushButton):
 
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         toptoolbar_layout.addStretch()
 
         for i in range(toptoolbar_layout.count()):
             btn = toptoolbar_layout.itemAt(i).widget()
             if isinstance(btn, QPushButton):
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 btn.setStyleSheet("""
                     QPushButton {
@@ -633,10 +731,14 @@ class Chat_Central_Widget(QWidget):
                     }
                 """)
 <<<<<<< HEAD
+<<<<<<< HEAD
         #++++++++++++++++++++++++++++++++++++++++
 
         #++++++++++++++++++++++++++++++++++++++++
         # The floating send button
+=======
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -645,7 +747,11 @@ class Chat_Central_Widget(QWidget):
         self.btn_send.setIconSize(QSize(22, 22))
         self.btn_send.setToolTip("Send message")
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.btn_send.setFixedSize(30, 30)      # Sometimes the QSS does not work, so set fixed size here
+=======
+        self.btn_send.setFixedSize(30, 30)
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         self.btn_send.setFixedSize(30, 30)
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -664,6 +770,7 @@ class Chat_Central_Widget(QWidget):
 
         self.btn_send.clicked.connect(self.on_send_clicked)
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.btn_send.raise_()       # Move the floating send button to the top of the stack
         #++++++++++++++++++++++++++++++++++++++++
 
@@ -671,6 +778,10 @@ class Chat_Central_Widget(QWidget):
 
         #++++++++++++++++++++++++++++++++++++++++
         # Add a shadow effect to the input container
+=======
+        self.btn_send.raise_()
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         self.btn_send.raise_()
 
@@ -685,6 +796,7 @@ class Chat_Central_Widget(QWidget):
         self.input_container.setParent(self)
         self.input_container.raise_()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         self.messages_count = 0        # Count of total messages
@@ -730,6 +842,8 @@ class Chat_Central_Widget(QWidget):
         self.current_background_is_gif = is_gif
 
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.messages_count = 0
         self.resizeEvent(None)
         self.update_input_container_position()
@@ -754,6 +868,9 @@ class Chat_Central_Widget(QWidget):
         self.current_background_image_path = image_path
         is_gif = image_path.lower().endswith(".gif")
         self.current_background_is_gif = is_gif
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if is_gif:
             movie = QMovie(image_path)
@@ -762,6 +879,7 @@ class Chat_Central_Widget(QWidget):
         else:
             pix = QPixmap(image_path)
             self.background_label.setPixmap(pix)
+<<<<<<< HEAD
 <<<<<<< HEAD
             
         # Set transparent background to avoid blocking
@@ -789,6 +907,8 @@ class Chat_Central_Widget(QWidget):
                 border: 1px solid #cccccc;      /* light border */
                 border-radius: 8px;             /* rounded corners */
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.background_label.setStyleSheet("background-color: transparent;")
         print(f"[INFO] Background set to: {image_path}")
 
@@ -801,11 +921,15 @@ class Chat_Central_Widget(QWidget):
                 color: #333333;
                 border: 1px solid #cccccc;
                 border-radius: 8px;
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 padding: 4px;
             }
             QMenu::item {
                 background-color: transparent;
+<<<<<<< HEAD
 <<<<<<< HEAD
                 padding: 2px 8px 2px 8px;     /* Adjust padding for comfort */
                 border-radius: 6px;
@@ -815,12 +939,17 @@ class Chat_Central_Widget(QWidget):
             QMenu::item:selected {
                 background-color: #f0f0f0;      /* hover light gray */
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 padding: 2px 8px 2px 8px;
                 border-radius: 6px;
                 margin: 2px 4px;
             }
             QMenu::item:selected {
                 background-color: #f0f0f0;
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 color: #000000;
             }
@@ -830,6 +959,7 @@ class Chat_Central_Widget(QWidget):
                 margin: 4px 0;
             }
         """)
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         # Show the menu at the cursor position
@@ -875,6 +1005,8 @@ class Chat_Central_Widget(QWidget):
 
         # Update the position of the input container
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         menu.exec(self.chat_line_edit.mapToGlobal(pos))
 
     def on_send_clicked(self):
@@ -885,11 +1017,15 @@ class Chat_Central_Widget(QWidget):
         self.send_message_signal.emit(text, images)
         self.chat_line_edit.clear()
         self.pending_images.clear()
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.messages_count += 1
         self.adjust_input_height()
         self.update_input_container_position()
         self.scroll_area.verticalScrollBar().setValue(self.scroll_area.verticalScrollBar().maximum())
+<<<<<<< HEAD
 <<<<<<< HEAD
     #-----------------------------------------------------------------------------
 
@@ -909,10 +1045,15 @@ class Chat_Central_Widget(QWidget):
 
     def eventFilter(self, obj, event):
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+
+    def eventFilter(self, obj, event):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if obj == self.chat_line_edit and event.type() == QEvent.KeyPress:
             key_event = event
             if key_event.key() in (Qt.Key_Enter, Qt.Key_Return):
                 if key_event.modifiers() & Qt.ShiftModifier:
+<<<<<<< HEAD
 <<<<<<< HEAD
                     # User wants a newline, insert '\n' without sending
                     self.chat_line_edit.insertPlainText("\n")
@@ -924,11 +1065,17 @@ class Chat_Central_Widget(QWidget):
                     return True
                 else:
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+                    self.chat_line_edit.insertPlainText("\n")
+                    return True
+                else:
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                     current_time = QDateTime.currentMSecsSinceEpoch()
                     if current_time - self._last_send_time >= self._send_debounce_ms:
                         self.on_send_clicked()
                         self._last_send_time = current_time
                     else:
+<<<<<<< HEAD
 <<<<<<< HEAD
                         # Ignore rapid repeat Enter
                         print("Send ignored due to debounce")
@@ -942,10 +1089,15 @@ class Chat_Central_Widget(QWidget):
     # The local operations
     # Function for inserting image
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                         print("Send ignored due to debounce")
                     return True
         return super().eventFilter(obj, event)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def insert_image(self):
         file_name, _ = QFileDialog.getOpenFileName(
@@ -953,7 +1105,10 @@ class Chat_Central_Widget(QWidget):
         )
         if file_name:
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             self.selected_image = file_name
@@ -962,7 +1117,10 @@ class Chat_Central_Widget(QWidget):
             cursor = self.chat_line_edit.textCursor()
             cursor.movePosition(QTextCursor.End)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             img_format = QTextImageFormat()
@@ -971,6 +1129,7 @@ class Chat_Central_Widget(QWidget):
             img_format.setHeight(80)
             cursor.insertImage(img_format)
             cursor.insertText(" ")
+<<<<<<< HEAD
 <<<<<<< HEAD
     #-----------------------------------------------------------------------------
 
@@ -1090,6 +1249,8 @@ class Chat_Central_Widget(QWidget):
         
         # Simple crop (centered)
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
     def update_input_container_position(self):
         h = self.scroll_area.height()
@@ -1144,11 +1305,15 @@ class Chat_Central_Widget(QWidget):
             Qt.KeepAspectRatioByExpanding, 
             Qt.FastTransformation
         )
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if scaled_pix.width() > win_w or scaled_pix.height() > win_h:
             x = (scaled_pix.width() - win_w) // 2
             y = (scaled_pix.height() - win_h) // 2
             scaled_pix = scaled_pix.copy(x, y, win_w, win_h)
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         self.background_label.setPixmap(scaled_pix)
@@ -1170,6 +1335,8 @@ class Chat_Central_Widget(QWidget):
         )
 
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.background_label.setPixmap(scaled_pix)
 
     def _perform_high_quality_scale(self):
@@ -1182,11 +1349,15 @@ class Chat_Central_Widget(QWidget):
             Qt.KeepAspectRatioByExpanding, 
             Qt.SmoothTransformation
         )
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if scaled_pix.width() > win_w or scaled_pix.height() > win_h:
             x = (scaled_pix.width() - win_w) // 2
             y = (scaled_pix.height() - win_h) // 2
             scaled_pix = scaled_pix.copy(x, y, win_w, win_h)
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         self.background_label.setPixmap(scaled_pix)
@@ -1318,6 +1489,8 @@ class Chat_Central_Widget(QWidget):
         # layout.count() contains bottom_buffer and stretch
         # we want to keep the bottom buffer, so only delete the message bubbles in front
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.background_label.setPixmap(scaled_pix)
 
     def _update_background_size(self):
@@ -1372,12 +1545,16 @@ class Chat_Central_Widget(QWidget):
 
     def clear_all_messages(self):
         layout = self.result_layout
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         while layout.count() > 2:
             item = layout.takeAt(0)
             widget = item.widget()
             if widget:
                 widget.deleteLater()
+<<<<<<< HEAD
 <<<<<<< HEAD
     #-----------------------------------------------------------------------------
 
@@ -1395,10 +1572,16 @@ class Chat_Central_Widget(QWidget):
     def update_ui_texts(self, lang_manager):
         if not lang_manager: return
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+
+    def update_ui_texts(self, lang_manager):
+        if not lang_manager: return
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.btn_new_folder.setText(lang_manager.get_text("New folder"))
         self.btn_new_chat.setText(lang_manager.get_text("New chat"))
         self.btn_image.setText(lang_manager.get_text("Insert image"))
         self.btn_settings.setText(lang_manager.get_text("Settings"))
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         # 2. Update tooltips (Tooltips)
@@ -1428,6 +1611,10 @@ if __name__ == "__main__":
     sys.exit(app.exec())
 #--------------------------------------------------------------------------------
 
+=======
+        self.btn_send.setToolTip(lang_manager.get_text("Send message"))
+        self.chat_line_edit.setPlaceholderText(lang_manager.get_text("Ask anything..."))
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         self.btn_send.setToolTip(lang_manager.get_text("Send message"))
         self.chat_line_edit.setPlaceholderText(lang_manager.get_text("Ask anything..."))

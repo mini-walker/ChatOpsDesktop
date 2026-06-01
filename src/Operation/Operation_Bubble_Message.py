@@ -1,6 +1,10 @@
 #-----------------------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Purpose: This file contains the BubbleMessage class for chat messages
+=======
+# Purpouse: This file contains the BubbleMessage class for chat messages
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 # Purpouse: This file contains the BubbleMessage class for chat messages
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -10,6 +14,7 @@
 #----------------------------------------------------------------------------------------- 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #-----------------------------------------------------------------------------------------
 # Import necessary modules for the BubbleMessage class
 #-----------------------------------------------------------------------------------------
@@ -17,6 +22,8 @@ import sys
 import re
 import base64
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 import sys
 import re
 import io
@@ -24,6 +31,9 @@ import base64
 import matplotlib
 import matplotlib.pyplot as plt
 import latex2mathml.converter 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 import markdown
 
@@ -33,6 +43,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtGui import (
     QPixmap, QFont, QTextOption, QTextTable, QTextCursor, 
+<<<<<<< HEAD
 <<<<<<< HEAD
     QAction, QIcon, QPainter, QColor, QResizeEvent
 )
@@ -45,10 +56,15 @@ latex_to_mathml_inline = utils.latex_to_mathml_inline
 wrap_code_with_table = utils.wrap_code_with_table
 unicode_to_latex = utils.unicode_to_latex
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     QIcon
 )
 from PySide6.QtCore import Qt, QTimer, Signal, QSize, QByteArray, QMimeData
 from Utils.Utils import utils
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
 # ==================================================================================
@@ -56,10 +72,13 @@ from Utils.Utils import utils
 # ==================================================================================
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #-----------------------------------------------------------------------------------------
 # Markdown Configuration
 # Initialize the Markdown converter with specific extensions for rendering
 #-----------------------------------------------------------------------------------------
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 md_converter = markdown.Markdown(extensions=[
@@ -68,6 +87,7 @@ md_converter = markdown.Markdown(extensions=[
     'codehilite': {'css_class': 'codehilite', 'noclasses': False, 'use_pygments': True}
 })
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #-----------------------------------------------------------------------------------------
 # SVG Icon Generator
@@ -80,6 +100,8 @@ def get_copy_icon():
 # Global CSS for rendering HTML content in the QTextBrowser
 #-----------------------------------------------------------------------------------------
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 def get_copy_icon():
     return QIcon(utils.resource_path("images/WIN11-Icons/icons8-copy-100.png"))
 
@@ -125,6 +147,9 @@ def wrap_code_with_table(html):
     pattern = r'<div class="codehilite">(.*?)</div>'
     return re.sub(pattern, lambda m: f"{table_start}{m.group(1)}{table_end}", html, flags=re.DOTALL)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 HTML_WRAPPER = """
 <!DOCTYPE html>
@@ -134,7 +159,11 @@ HTML_WRAPPER = """
     <style>
         body {{ 
 <<<<<<< HEAD
+<<<<<<< HEAD
             font-family: 'Times New Roman', 'STFangsong', '华文仿宋', serif; 
+=======
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; 
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; 
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -149,6 +178,7 @@ HTML_WRAPPER = """
         p code, li code {{ background-color: rgba(175, 184, 193, 0.2); padding: 2px 5px; border-radius: 4px; font-size: 0.9em; }}
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* Table Styles */
         table {{ border-collapse: collapse; margin: 10px 0; width: 100%; border: 1px solid #d0d7de; }}
         th, td {{ border: 1px solid #d0d7de; padding: 8px 12px; text-align: left; }}
@@ -156,6 +186,8 @@ HTML_WRAPPER = """
         tr:nth-child(even) {{ background-color: #f6f8fa; }}
         
         /* Syntax Highlighting Colors */
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         .k, .kd, .kn {{ color: #cf222e; font-weight: bold; }} 
@@ -181,11 +213,14 @@ HTML_WRAPPER = """
 # SECTION 2: BUBBLE MESSAGE CLASS
 # ==================================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #-----------------------------------------------------------------------------------------
 # BubbleMessage Class
 # This class represents a chat bubble for displaying user or AI messages
 #-----------------------------------------------------------------------------------------
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 class BubbleMessage(QWidget):
@@ -197,6 +232,7 @@ class BubbleMessage(QWidget):
         
         self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed) 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Initialize instance variables
         self.is_user = is_user
@@ -214,6 +250,10 @@ class BubbleMessage(QWidget):
         self.is_user = is_user
         self.text = text or ""
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+        self.is_user = is_user
+        self.text = text or ""
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.images = images or []
         self.user_name = user_name
         self.ai_logo = ai_logo
@@ -224,9 +264,14 @@ class BubbleMessage(QWidget):
         self.image_labels = []
         self.text_edit = None
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.overlay_buttons = [] # Store overlay buttons to manage memory
 
         # Layout Setup
+=======
+        self.overlay_buttons = []
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         self.overlay_buttons = []
 
@@ -246,6 +291,7 @@ class BubbleMessage(QWidget):
         self.bubble_widget = QWidget()
         self.bubble_widget.setLayout(self.bubble_layout)
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Build UI Components
         self.addHeader()
@@ -299,6 +345,8 @@ class BubbleMessage(QWidget):
     def addHeader(self):
         """Adds the user/model name and the main Copy button."""
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self._add_header()
         self._add_text()
         self._add_images()
@@ -310,6 +358,9 @@ class BubbleMessage(QWidget):
         QTimer.singleShot(0, self._calculate_and_set_size)
 
     def _add_header(self):
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         header = QHBoxLayout()
         header.setContentsMargins(0, 0, 0, 0)
@@ -334,6 +385,7 @@ class BubbleMessage(QWidget):
             header.addStretch()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # --- Main Copy Button (Global) ---
         # [FIXED]: Added Icon and adjusted size
         copy_btn = QPushButton("Copy")
@@ -341,10 +393,15 @@ class BubbleMessage(QWidget):
         copy_btn.setIconSize(QSize(12, 12))
         copy_btn.setFixedSize(60, 22) # Slightly wider to fit Icon + Text
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         copy_btn = QPushButton("Copy")
         copy_btn.setIcon(get_copy_icon())
         copy_btn.setIconSize(QSize(12, 12))
         copy_btn.setFixedSize(60, 22)
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         copy_btn.setCursor(Qt.PointingHandCursor)
         copy_btn.setStyleSheet("""
@@ -355,7 +412,11 @@ class BubbleMessage(QWidget):
             QPushButton:hover { background: #E0E0E0; }
         """)
 <<<<<<< HEAD
+<<<<<<< HEAD
         copy_btn.clicked.connect(self.smartCopy)
+=======
+        copy_btn.clicked.connect(self._smart_copy)
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
         copy_btn.clicked.connect(self._smart_copy)
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -363,6 +424,7 @@ class BubbleMessage(QWidget):
 
         self.main_stack.addLayout(header)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     #-----------------------------------------------------------------------------
     # Copy Functionality
@@ -381,10 +443,16 @@ class BubbleMessage(QWidget):
         clipboard = QApplication.clipboard()
         mime_data = QMimeData()
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+    def _smart_copy(self):
+        clipboard = QApplication.clipboard()
+        mime_data = QMimeData()
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         plain_text = self.text
         if self.text == "Thinking..." and self.text_edit:
              plain_text = self.text_edit.toPlainText()
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         # 2. Construct HTML content (text + images)
         html_content = f"<div>{plain_text.replace(chr(10), '<br>')}</div>"
@@ -523,6 +591,8 @@ class BubbleMessage(QWidget):
                 border: 1px solid #cccccc;      /* light border */
                 border-radius: 8px;             /* rounded corners */
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         html_content = f"<div>{plain_text.replace(chr(10), '<br>')}</div>"
 
         if self.images:
@@ -584,11 +654,15 @@ class BubbleMessage(QWidget):
                 color: #333333;
                 border: 1px solid #cccccc;
                 border-radius: 8px;
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 padding: 4px;
             }
             QMenu::item {
                 background-color: transparent;
+<<<<<<< HEAD
 <<<<<<< HEAD
                 padding: 2px 8px 2px 8px;     /* Adjust padding for comfort */
                 border-radius: 6px;
@@ -598,12 +672,17 @@ class BubbleMessage(QWidget):
             QMenu::item:selected {
                 background-color: #f0f0f0;      /* hover light gray */
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 padding: 2px 8px 2px 8px;
                 border-radius: 6px;
                 margin: 2px 4px;
             }
             QMenu::item:selected {
                 background-color: #f0f0f0;
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 color: #000000;
             }
@@ -613,6 +692,7 @@ class BubbleMessage(QWidget):
                 margin: 4px 0;
             }
         """)
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         # Show the menu at the cursor position
@@ -635,12 +715,18 @@ class BubbleMessage(QWidget):
 
     def _add_text(self):
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+        menu.exec(self.text_edit.mapToGlobal(pos))
+
+    def _add_text(self):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.text_edit = QTextBrowser()
         self.text_edit.setReadOnly(True)
         self.text_edit.setFrameStyle(QFrame.NoFrame)
         self.text_edit.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.text_edit.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.text_edit.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
+<<<<<<< HEAD
 <<<<<<< HEAD
         
         # Set font: Times New Roman (English), STFangsong (Chinese)
@@ -661,6 +747,8 @@ class BubbleMessage(QWidget):
         if self.is_user:
             # User messages: simple markdown conversion
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.text_edit.setFont(QFont("Segoe UI", 11))
         self.text_edit.setWordWrapMode(QTextOption.WrapAtWordBoundaryOrAnywhere)
         self.text_edit.setOpenExternalLinks(True)
@@ -668,11 +756,15 @@ class BubbleMessage(QWidget):
         self.text_edit.customContextMenuRequested.connect(self.show_context_menu_for_bubble)
 
         if self.is_user:
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             md_converter.reset()
             html = md_converter.convert(self.text)
             self.text_edit.setHtml(f"<style>p{{margin:0;}}</style>{html}")
         elif self.text == "Thinking...":
+<<<<<<< HEAD
 <<<<<<< HEAD
             # Special case: show plain text for "Thinking..." state
             self.text_edit.setPlainText(self.text)
@@ -764,6 +856,8 @@ class BubbleMessage(QWidget):
         
         # Style the menu (consistent with your previous menu style)
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             self.text_edit.setPlainText(self.text)
         else:
             self.text_edit.setHtml(self._render_local(self.text))
@@ -802,6 +896,9 @@ class BubbleMessage(QWidget):
     def _show_image_context_menu(self, pos, label):
         menu = QMenu(self)
         copy_action = menu.addAction(QIcon(), "Copy Image")
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         menu.setStyleSheet("""
             QMenu {
@@ -820,6 +917,7 @@ class BubbleMessage(QWidget):
             }
         """)
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         # Show the menu at the cursor position
         action = menu.exec(label.mapToGlobal(pos))
@@ -828,10 +926,14 @@ class BubbleMessage(QWidget):
 =======
         action = menu.exec(label.mapToGlobal(pos))
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
+        action = menu.exec(label.mapToGlobal(pos))
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if action == copy_action:
             pixmap = label.property("original_pixmap")
             if pixmap and not pixmap.isNull():
                 QApplication.clipboard().setPixmap(pixmap)
+<<<<<<< HEAD
 <<<<<<< HEAD
                 self.flashCopyBtn("Image Copied!")  # Reuse the button's feedback effect
     
@@ -862,6 +964,8 @@ class BubbleMessage(QWidget):
         User messages have a green background, AI messages have a white background.
         """
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 self._flash_copy_btn("Image Copied!")
 
     def _apply_alignment(self):
@@ -871,6 +975,9 @@ class BubbleMessage(QWidget):
             self.outer_layout.addLayout(self.main_stack); self.outer_layout.addStretch()
 
     def _apply_stylesheet(self):
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         bg = "#DCF8C6" if self.is_user else "#FFFFFF"
         border = "#E5E5E5"
@@ -879,6 +986,7 @@ class BubbleMessage(QWidget):
             f"#bubble_widget {{ background-color: {bg}; border-radius: 12px; border: 1px solid {border}; }}"
         )
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     def calculateAndSetSize(self):
         """
@@ -900,6 +1008,8 @@ class BubbleMessage(QWidget):
             
             # Adjust text width and height
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def _calculate_and_set_size(self):
         self.bubble_widget.setFixedWidth(self.bubble_width)
         cw = self.bubble_width - (self.bubble_layout.contentsMargins().left() + self.bubble_layout.contentsMargins().right())
@@ -907,20 +1017,27 @@ class BubbleMessage(QWidget):
             for lbl in self.image_labels:
                 pix = lbl.property("original_pixmap")
                 if pix: lbl.setPixmap(pix.scaled(cw, 300, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
             if self.text_edit:
                 self.text_edit.document().setTextWidth(cw)
                 h = int(self.text_edit.document().size().height()) + 5
                 self.text_edit.setFixedHeight(h)
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         # Update widget geometry and emit signal
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.adjustSize()
         self.updateGeometry()
         self.content_updated.emit()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     # ------------------------------------------------------------------------------
     # Public Methods for Controller
@@ -939,15 +1056,21 @@ class BubbleMessage(QWidget):
             if self.is_user:
                 # User messages: simple markdown conversion
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     def set_content(self, raw_text):
         self.text = raw_text
         if self.text_edit:
             if self.is_user:
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 md_converter.reset()
                 html = md_converter.convert(self.text)
                 self.text_edit.setHtml(f"<style>p{{margin:0;}}</style>{html}")
             else:
+<<<<<<< HEAD
 <<<<<<< HEAD
                 # AI messages: full LaTeX and Markdown rendering
                 self.text_edit.setHtml(self.renderLocal(self.text))
@@ -987,6 +1110,8 @@ class BubbleMessage(QWidget):
         self.calculateAndSetSize()
         QTimer.singleShot(50, self.updateOverlayButtons)
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 self.text_edit.setHtml(self._render_local(self.text))
             self._calculate_and_set_size()
             QTimer.singleShot(50, self._update_overlay_buttons)
@@ -1004,6 +1129,9 @@ class BubbleMessage(QWidget):
         self._calculate_and_set_size()
         QTimer.singleShot(50, self._update_overlay_buttons)
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
     # ==============================================================================
@@ -1011,6 +1139,7 @@ class BubbleMessage(QWidget):
     # ==============================================================================
     def resizeEvent(self, event):
         """
+<<<<<<< HEAD
 <<<<<<< HEAD
         Handle widget resize events.
         
@@ -1056,6 +1185,8 @@ class BubbleMessage(QWidget):
 
         # Step 1: Cleanup old buttons to prevent memory leaks
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         Triggered when the window/bubble is resized.
         Ensures code block overlay buttons reposition correctly.
         """
@@ -1081,13 +1212,19 @@ class BubbleMessage(QWidget):
         if not self.text_edit: return
 
         # Remove old buttons
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         for b in self.overlay_buttons:
             b.deleteLater()
         self.overlay_buttons.clear()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # Get document layout information
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         doc = self.text_edit.document()
@@ -1096,6 +1233,7 @@ class BubbleMessage(QWidget):
         scroll_y = self.text_edit.verticalScrollBar().value()
         viewport_width = self.text_edit.viewport().width()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Step 2: Iterate over frames to find code blocks (rendered as tables)
         for frame in root.childFrames():
@@ -1113,6 +1251,8 @@ class BubbleMessage(QWidget):
 
                 # Step 3: Create button with copy icon
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         for frame in root.childFrames():
             if isinstance(frame, QTextTable):  # Identify code blocks
                 rect = layout.frameBoundingRect(frame)
@@ -1123,6 +1263,9 @@ class BubbleMessage(QWidget):
                     continue
 
                 # Create button
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 btn = QPushButton(self.text_edit)
                 btn.setCursor(Qt.PointingHandCursor)
@@ -1130,8 +1273,11 @@ class BubbleMessage(QWidget):
                 btn.setIconSize(QSize(14, 14))
                 btn.setToolTip("Copy code")
 <<<<<<< HEAD
+<<<<<<< HEAD
                 
                 # Style: Transparent background, visible on hover
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 btn.setStyleSheet("""
@@ -1144,6 +1290,7 @@ class BubbleMessage(QWidget):
                 """)
                 btn.adjustSize()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                 # Step 4: Calculate top-right position for the button
                 # X = Right edge of table - button width - margin
@@ -1185,6 +1332,8 @@ class BubbleMessage(QWidget):
                 original_icon = sender.icon()
                 sender.setIcon(QIcon())  # Remove icon
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 # Position top-right with margin
                 x_pos = rect.right() - btn.width() - 10
                 if x_pos > viewport_width - btn.width():
@@ -1209,6 +1358,9 @@ class BubbleMessage(QWidget):
             if sender:
                 original_icon = sender.icon()
                 sender.setIcon(QIcon())
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
                 sender.setText("Copied!")
                 sender.setStyleSheet("""
@@ -1219,6 +1371,7 @@ class BubbleMessage(QWidget):
                     }
                 """)
                 sender.adjustSize()
+<<<<<<< HEAD
 <<<<<<< HEAD
                 
                 # Re-align slightly to keep right-alignment visual
@@ -1245,6 +1398,8 @@ class BubbleMessage(QWidget):
         except Exception as e:
             print(f"Copy failed: {e}")
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
                 curr_pos = sender.pos()
                 sender.move(curr_pos.x() - 20, curr_pos.y() + 5)
@@ -1268,4 +1423,7 @@ class BubbleMessage(QWidget):
         except Exception as e:
             print(f"Copy failed: {e}")
 
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6

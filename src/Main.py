@@ -6,8 +6,12 @@
 #----------------------------------------------------------------------------------------- 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import sys  # Import system-specific parameters and functions
+=======
+import sys
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 import sys
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
@@ -16,8 +20,11 @@ import os
 from pathlib import Path
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #-----------------------------------------------------------------------------------------
 # Import PySide6 widgets for UI elements
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 =======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 from PySide6.QtWidgets import ( 
@@ -30,6 +37,7 @@ from PySide6.QtWidgets import (
     QFormLayout, QGridLayout,
     QMessageBox
 )
+<<<<<<< HEAD
 <<<<<<< HEAD
 from PySide6.QtGui import QPixmap, QFont, QIcon                     # Import classes for images, fonts, and icons
 from PySide6.QtCore import Qt, QSize, QSettings                     # Import Qt core functionalities such as alignment
@@ -48,6 +56,8 @@ if __name__ == '__main__':  # Ensure this code runs only when the file is execut
     sys.exit(app.exec())            # Start the application's event loop
 #-----------------------------------------------------------------------------------------
 =======
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 from PySide6.QtGui import QPixmap, QFont, QIcon
 from PySide6.QtCore import Qt, QSize, QSettings
 
@@ -59,4 +69,7 @@ if __name__ == '__main__':
     window = AI_Chat_App()
     window.show()
     sys.exit(app.exec())
+<<<<<<< HEAD
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
+=======
 >>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
