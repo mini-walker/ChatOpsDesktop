@@ -48,7 +48,10 @@
 
       "Search": "Search",
       "Search engine:": "Search engine:"
+<<<<<<< HEAD
       
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
   },
   "Chinese": {
       "New chat": "新建对话",
@@ -95,5 +98,9 @@
       "Search": "搜索设置",
       "Search engine:": "搜索引擎:"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
   }
 }

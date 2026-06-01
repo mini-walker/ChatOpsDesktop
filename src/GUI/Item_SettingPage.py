@@ -1,5 +1,9 @@
 #-----------------------------------------------------------------------------------------
+<<<<<<< HEAD
 # Purpose: This file is used to create the Settings Window with multi-language support
+=======
+# Purpouse: This file is used to create the Settings Window with multi-language support
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 # Programmer: Shanqin Jin
 # Email: sjin@mun.ca
 # Date: 2025-11-23 
@@ -10,11 +14,15 @@ import os
 from pathlib import Path
 
 #-----------------------------------------------------------------------------------------
+<<<<<<< HEAD
 # Import PySide6 widgets for creating the UI components
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 from PySide6.QtWidgets import ( 
     QFileDialog, QDialog, QHBoxLayout, QVBoxLayout, QTreeWidget, QTreeWidgetItem,
     QStackedWidget, QDialogButtonBox, QLineEdit, QLabel, QComboBox, QCheckBox, 
     QMessageBox, QPushButton, QWidget, QGroupBox, QFormLayout, QSlider, QTextEdit,
+<<<<<<< HEAD
     QRadioButton, QButtonGroup, QStyledItemDelegate, QStyle, QStyleOptionViewItem,
     QSizePolicy
 )
@@ -25,6 +33,14 @@ from PySide6.QtGui import QColor, QFont, QIcon
 #-----------------------------------------------------------------------------------------
 # Import utility functions from the Utils module
 # If the module is not found, define a fallback class for debugging
+=======
+    QRadioButton, QButtonGroup
+)
+from PySide6.QtCore import Qt, Signal, QSettings
+#-----------------------------------------------------------------------------------------
+
+#-----------------------------------------------------------------------------------------
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 try:
     from Utils.Utils import utils
 except ImportError:
@@ -33,6 +49,7 @@ except ImportError:
     utils = Utils()
 #-----------------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 #-----------------------------------------------------------------------------------------
 class QComboBoxDeleteDelegate(QStyledItemDelegate):
     def __init__(self, parent=None, delete_callback=None):
@@ -90,11 +107,18 @@ class Setting_Window(QDialog):
     apply_settings_signal = Signal()
     models_changed_signal = Signal(list, str)
     connection_test_signal = Signal(bool, str)  # (success, message)
+=======
+class Setting_Window(QDialog):
+
+    settings_page_operation_signal = Signal(str)
+    apply_settings_signal = Signal()
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
     def __init__(self, parent=None):
         super().__init__(parent)
 
         self.setWindowTitle("Preferences")
+<<<<<<< HEAD
         self.resize(780, 600) 
         self.setMinimumSize(720, 540)
 
@@ -105,6 +129,11 @@ class Setting_Window(QDialog):
         # Setup Settings File
         # Create the user folder if it doesn't exist
         # Initialize QSettings to manage application settings
+=======
+        self.resize(700, 550) 
+
+        #---------------------------------------------------------------------------------
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         usr_folder = utils.get_usr_dir()
         os.makedirs(usr_folder, exist_ok = True)
         setting_file_path = usr_folder / "settings.ini"
@@ -112,6 +141,7 @@ class Setting_Window(QDialog):
         #---------------------------------------------------------------------------------
 
         #---------------------------------------------------------------------------------
+<<<<<<< HEAD
         # Main Layout
         # Create a horizontal layout with a navigation tree on the left
         # and a stacked widget for pages on the right
@@ -128,6 +158,15 @@ class Setting_Window(QDialog):
 
         #---------------------------------------------------------------------------------
         # Define navigation tree items for different settings categories
+=======
+        main_layout = QHBoxLayout()
+
+        self.preference_tree = QTreeWidget()
+        self.preference_tree.setHeaderHidden(True)
+        self.preference_tree.setFixedWidth(160)
+        main_layout.addWidget(self.preference_tree)
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.item_ai = QTreeWidgetItem(["AI Configuration"]) 
         self.item_appearance = QTreeWidgetItem(["Appearance"])
         self.item_font = QTreeWidgetItem(["Font Settings"])
@@ -142,20 +181,39 @@ class Setting_Window(QDialog):
             self.item_search
         ])
         self.preference_tree.setIndentation(0)
+<<<<<<< HEAD
         self.preference_tree.setRootIsDecorated(False)
         self.preference_tree.setUniformRowHeights(True)
 
         # Right: Pages
         self.stack = QStackedWidget()
         self.stack.setObjectName("settingsStack")
+=======
+
+        self.preference_tree.setStyleSheet("""
+            QTreeWidget {
+                border: 1px solid #D3D3D3;
+                border-radius: 8px;
+                padding: 0px;
+            }
+            QTreeWidget::item { padding: 8px; color: #333333; }
+            QTreeWidget::item:hover { background-color: #E8E8E8; }
+            QTreeWidget::item:selected { background-color: #DCDCDC; color: #333333; }
+        """)
+
+        self.stack = QStackedWidget()
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         main_layout.addWidget(self.stack)
 
         self.controls = {
             "AI": {}, "Font": {}, "Search": {}, "Language": {}, "Appearance": {}
         }
 
+<<<<<<< HEAD
         #---------------------------------------------------------------------------------
         # Create pages for each settings category and add them to the stacked widget
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.ai_page = self.create_ai_page_in_setting()
         self.appearance_page = self.create_appearance_page_in_setting()
         self.font_page = self.create_font_page_in_setting()
@@ -168,6 +226,7 @@ class Setting_Window(QDialog):
         self.stack.addWidget(self.language_page)
         self.stack.addWidget(self.search_page)
 
+<<<<<<< HEAD
         #---------------------------------------------------------------------------------
         # Connect the navigation tree to the stacked widget to switch pages
         self.preference_tree.currentItemChanged.connect(self.change_page)
@@ -179,10 +238,17 @@ class Setting_Window(QDialog):
         self.button_box.setObjectName("settingsButtons")
         self.button_box.button(QDialogButtonBox.Ok).setObjectName("primaryButton")
         self.button_box.button(QDialogButtonBox.Cancel).setObjectName("secondaryButton")
+=======
+        self.preference_tree.currentItemChanged.connect(self.change_page)
+        self.preference_tree.setCurrentItem(self.item_ai)
+
+        self.button_box = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.button_box.accepted.connect(self.accept)
         self.button_box.rejected.connect(self.reject)
 
         layout = QVBoxLayout(self)
+<<<<<<< HEAD
         layout.setContentsMargins(18, 18, 18, 14)
         layout.setSpacing(14)
         layout.addLayout(main_layout)
@@ -444,6 +510,19 @@ class Setting_Window(QDialog):
         self._setup_form_layout(api_layout)
 
         # 1. Provider
+=======
+        layout.addLayout(main_layout)
+        layout.addWidget(self.button_box)
+
+    #-------------------------------------------------------------------------------------
+    def create_ai_page_in_setting(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+        
+        self.group_ai_api = QGroupBox("API Connection") 
+        api_layout = QFormLayout()
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.lbl_provider = QLabel("Provider:")
         self.provider_combo = QComboBox()
         self.provider_combo.addItems([
@@ -462,6 +541,7 @@ class Setting_Window(QDialog):
         
         saved_provider = self.settings.value("AI/provider", "OpenRouter (Recommended)")
         self.provider_combo.setCurrentText(saved_provider)
+<<<<<<< HEAD
         self.provider_combo.currentTextChanged.connect(self.on_provider_changed)
         self.controls["AI"]["provider"] = self.provider_combo
         self.provider_combo.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
@@ -524,10 +604,25 @@ class Setting_Window(QDialog):
         
         api_input = QLineEdit()
         api_input.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+=======
+        self.provider_combo.currentTextChanged.connect(self._on_provider_changed)
+        self.controls["AI"]["provider"] = self.provider_combo
+
+        self.lbl_base_url = QLabel("Base URL:")
+        base_url_input = QLineEdit()
+        base_url_input.setPlaceholderText("https://...")
+        default_url = "https://openrouter.ai/api/v1/chat/completions"
+        base_url_input.setText(self.settings.value("AI/base_url", default_url))
+        self.controls["AI"]["base_url"] = base_url_input
+
+        self.lbl_api_key = QLabel("API Key:")
+        api_input = QLineEdit()
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         api_input.setEchoMode(QLineEdit.EchoMode.Password)
         api_input.setPlaceholderText("sk-...")
         api_input.setText(self.settings.value("AI/api_key", ""))
         self.controls["AI"]["api_key"] = api_input
+<<<<<<< HEAD
         
         self.btn_toggle_key = QPushButton("👁️")
         self.btn_toggle_key.setObjectName("iconButton")
@@ -579,6 +674,18 @@ class Setting_Window(QDialog):
         self._setup_form_layout(behavior_layout)
 
         # 4. System Prompt
+=======
+
+        api_layout.addRow(self.lbl_provider, self.provider_combo)
+        api_layout.addRow(self.lbl_base_url, base_url_input)
+        api_layout.addRow(self.lbl_api_key, api_input)
+        self.group_ai_api.setLayout(api_layout)
+        layout.addWidget(self.group_ai_api)
+
+        self.group_ai_behavior = QGroupBox("Behavior")
+        behavior_layout = QFormLayout()
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.lbl_sys_prompt = QLabel("System Prompt:")
         sys_prompt = QTextEdit()
         sys_prompt.setPlaceholderText("You are a helpful assistant...")
@@ -586,7 +693,10 @@ class Setting_Window(QDialog):
         sys_prompt.setPlainText(self.settings.value("AI/system_prompt", "You are a helpful assistant."))
         self.controls["AI"]["system_prompt"] = sys_prompt
 
+<<<<<<< HEAD
         # 5. Temperature
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.lbl_temperature = QLabel("Temperature:")
         temp_container = QWidget()
         temp_h = QHBoxLayout(temp_container)
@@ -610,18 +720,23 @@ class Setting_Window(QDialog):
         self.group_ai_behavior.setLayout(behavior_layout)
         layout.addWidget(self.group_ai_behavior)
 
+<<<<<<< HEAD
         # --- Reset Button ---
         # Add a button to reset AI settings to default values
         self.btn_reset_ai = QPushButton("Reset AI Settings")
         self.btn_reset_ai.setObjectName("secondaryButton")
         self.btn_reset_ai.setFixedHeight(34)
         self.btn_reset_ai.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+=======
+        self.btn_reset_ai = QPushButton("Reset AI Settings")
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.btn_reset_ai.clicked.connect(self.reset_preferences)
         layout.addWidget(self.btn_reset_ai)
 
         layout.addStretch()
         return page
 
+<<<<<<< HEAD
     def update_provider_states(self, providers):
         """
         Enable/disable provider combobox items based on account.json definition.
@@ -967,6 +1082,9 @@ class Setting_Window(QDialog):
             return
 
         # Fallback to hardcoded URL map
+=======
+    def _on_provider_changed(self, provider_name):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         url_map = {
             "OpenRouter (Recommended)": "https://openrouter.ai/api/v1/chat/completions",
             "OpenAI (Official)": "https://api.openai.com/v1/chat/completions",
@@ -981,6 +1099,7 @@ class Setting_Window(QDialog):
         }
         if provider_name in url_map:
             self.controls["AI"]["base_url"].setText(url_map[provider_name])
+<<<<<<< HEAD
         elif self._is_custom_provider_display(provider_name):
             if "base_url" in self.controls["AI"]:
                 self.controls["AI"]["base_url"].clear()
@@ -1090,6 +1209,18 @@ class Setting_Window(QDialog):
         self.group_theme = QGroupBox("Theme & UI")
         form = QFormLayout(self.group_theme)
         self._setup_form_layout(form)
+=======
+
+    #-------------------------------------------------------------------------------------
+    def create_appearance_page_in_setting(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+        layout.setContentsMargins(0,0,0,0)
+
+        self.group_theme = QGroupBox("Theme & UI")
+        form = QFormLayout(self.group_theme)
+        form.setVerticalSpacing(15)
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
         self.lbl_theme_mode = QLabel("Theme mode:")
         mode_combo = QComboBox()
@@ -1105,6 +1236,7 @@ class Setting_Window(QDialog):
         form.addRow("", self.chk_toolbar_icons)
         layout.addWidget(self.group_theme)
 
+<<<<<<< HEAD
         # --- Group 2: Chat Background ---
         # Create input fields for selecting a custom background image
         self.group_bg = QGroupBox("Chat Background")
@@ -1115,6 +1247,12 @@ class Setting_Window(QDialog):
         self.lbl_bg_instruction = QLabel("Select a custom background image (JPG, PNG, GIF):")
         
         # Read-only line edit
+=======
+        self.group_bg = QGroupBox("Chat Background")
+        bg_layout = QVBoxLayout(self.group_bg)
+        
+        self.lbl_bg_instruction = QLabel("Select a custom background image (JPG, PNG, GIF):")
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.bg_path_input = QLineEdit()
         self.bg_path_input.setPlaceholderText("No image selected (Default)")
         self.bg_path_input.setReadOnly(True)
@@ -1122,10 +1260,14 @@ class Setting_Window(QDialog):
         self.bg_path_input.setText(saved_bg)
         self.controls["Appearance"]["chat_background"] = self.bg_path_input
 
+<<<<<<< HEAD
         # Buttons
         btn_layout = QHBoxLayout()
         btn_layout.setContentsMargins(0, 0, 0, 0)
         btn_layout.setSpacing(10)
+=======
+        btn_layout = QHBoxLayout()
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.btn_browse_bg = QPushButton("Browse Image...")
         self.btn_browse_bg.clicked.connect(self.browse_background_image)
         
@@ -1152,6 +1294,7 @@ class Setting_Window(QDialog):
         )
         if file_path:
             self.bg_path_input.setText(file_path)
+<<<<<<< HEAD
     #-------------------------------------------------------------------------------------
 
     #-------------------------------------------------------------------------------------
@@ -1172,6 +1315,17 @@ class Setting_Window(QDialog):
         self.lbl_font_type = QLabel("Font type:")
         font_combo = QComboBox()
         
+=======
+
+    def create_font_page_in_setting(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+        self.group_font = QGroupBox("Font Settings")
+        font_layout = QVBoxLayout(self.group_font)
+
+        self.lbl_font_type = QLabel("Font type:")
+        font_combo = QComboBox()
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         font_list = [
             "Arial", "Calibri", "Times New Roman", "Courier New", 
             "Microsoft YaHei", "SimHei", "SimSun", 
@@ -1184,8 +1338,11 @@ class Setting_Window(QDialog):
         font_layout.addWidget(font_combo)
         self.controls["Font"]["type"] = font_combo
 
+<<<<<<< HEAD
         # --- Font Size ---
         # Create a dropdown for selecting the font size
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.lbl_font_size = QLabel("Font size:")
         size_combo = QComboBox()
         size_combo.addItems([str(s) for s in range(8, 30)])
@@ -1198,6 +1355,7 @@ class Setting_Window(QDialog):
         layout.addStretch()
         return page
 
+<<<<<<< HEAD
     #-------------------------------------------------------------------------------------
     # Create the Language Settings Page
     def create_language_page_in_setting(self):
@@ -1213,6 +1371,14 @@ class Setting_Window(QDialog):
         
         # --- Language Type ---
         # Create a dropdown for selecting the application language
+=======
+    def create_language_page_in_setting(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+        self.group_language = QGroupBox("Language Settings")
+        lang_layout = QVBoxLayout(self.group_language)
+        
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.lbl_lang_type = QLabel("Language type:")
         language_combo = QComboBox()
         language_combo.addItems(["English", "Chinese"])
@@ -1225,6 +1391,7 @@ class Setting_Window(QDialog):
         layout.addStretch()
         return page
 
+<<<<<<< HEAD
     #-------------------------------------------------------------------------------------
     # Create the Search Settings Page
     def create_search_page_in_setting(self):
@@ -1237,6 +1404,13 @@ class Setting_Window(QDialog):
         
         # --- Search Engine ---
         # Create radio buttons for selecting the default search engine
+=======
+    def create_search_page_in_setting(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+        self.lbl_search_engine = QLabel("Search engine:")
+        
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         baidu_radio = QRadioButton("Baidu")
         google_radio = QRadioButton("Google")
         
@@ -1249,6 +1423,7 @@ class Setting_Window(QDialog):
         bg.addButton(baidu_radio)
         bg.addButton(google_radio)
 
+<<<<<<< HEAD
         self.group_search = QGroupBox("Search Engine")
         search_layout = QVBoxLayout(self.group_search)
         search_layout.setContentsMargins(16, 20, 16, 16)
@@ -1269,6 +1444,20 @@ class Setting_Window(QDialog):
         if not current: return
         
         # Map Tree Items to Pages
+=======
+        layout.addWidget(self.lbl_search_engine)
+        layout.addWidget(baidu_radio)
+        layout.addWidget(google_radio)
+
+        self.controls["Search"]["Baidu"] = baidu_radio
+        self.controls["Search"]["Google"] = google_radio
+        layout.addStretch()
+        return page
+
+    def change_page(self, current, previous):
+        if not current: return
+        
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         if current == self.item_ai:
             self.stack.setCurrentWidget(self.ai_page)
         elif current == self.item_appearance:
@@ -1280,6 +1469,7 @@ class Setting_Window(QDialog):
         elif current == self.item_search:
             self.stack.setCurrentWidget(self.search_page)
 
+<<<<<<< HEAD
     #-------------------------------------------------------------------------------------
     # Update UI Texts for Translation
     # Refresh all text in the Settings Window based on the current language
@@ -1293,12 +1483,20 @@ class Setting_Window(QDialog):
         self.setWindowTitle(lang_manager.get_text("Preferences"))
 
         # Sidebar Items
+=======
+    def update_ui_texts(self, lang_manager):
+        if not lang_manager: return
+        
+        self.setWindowTitle(lang_manager.get_text("Preferences"))
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.item_ai.setText(0, lang_manager.get_text("AI Configuration"))
         self.item_appearance.setText(0, lang_manager.get_text("Appearance"))
         self.item_font.setText(0, lang_manager.get_text("Font Settings"))
         self.item_language.setText(0, lang_manager.get_text("Language Settings"))
         self.item_search.setText(0, lang_manager.get_text("Search"))
 
+<<<<<<< HEAD
         # Dialog Buttons
         self.button_box.button(QDialogButtonBox.Ok).setText(lang_manager.get_text("Save"))
         self.button_box.button(QDialogButtonBox.Cancel).setText(lang_manager.get_text("Cancel"))
@@ -1307,6 +1505,13 @@ class Setting_Window(QDialog):
         self.group_ai_api.setTitle(lang_manager.get_text("API Connection"))
         self.lbl_provider.setText(lang_manager.get_text("Provider"))
         self.lbl_model.setText(lang_manager.get_text("Model"))
+=======
+        self.button_box.button(QDialogButtonBox.Ok).setText(lang_manager.get_text("Save"))
+        self.button_box.button(QDialogButtonBox.Cancel).setText(lang_manager.get_text("Cancel"))
+
+        self.group_ai_api.setTitle(lang_manager.get_text("API Connection"))
+        self.lbl_provider.setText(lang_manager.get_text("Provider"))
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.lbl_base_url.setText(lang_manager.get_text("Base URL"))
         self.lbl_api_key.setText(lang_manager.get_text("API Key"))
         
@@ -1315,7 +1520,10 @@ class Setting_Window(QDialog):
         self.lbl_temperature.setText(lang_manager.get_text("Temperature"))
         self.btn_reset_ai.setText(lang_manager.get_text("Reset"))
 
+<<<<<<< HEAD
         # 2. Appearance Page
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.group_theme.setTitle(lang_manager.get_text("Theme & UI"))
         self.lbl_theme_mode.setText(lang_manager.get_text("Theme mode:"))
         self.chk_toolbar_icons.setText(lang_manager.get_text("Show toolbar icons"))
@@ -1325,11 +1533,15 @@ class Setting_Window(QDialog):
         self.btn_browse_bg.setText(lang_manager.get_text("Browse Image..."))
         self.btn_clear_bg.setText(lang_manager.get_text("Clear / Reset"))
 
+<<<<<<< HEAD
         # 3. Font Page
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.group_font.setTitle(lang_manager.get_text("Font Settings"))
         self.lbl_font_type.setText(lang_manager.get_text("Font type:"))
         self.lbl_font_size.setText(lang_manager.get_text("Font size:"))
 
+<<<<<<< HEAD
         # 4. Language Page
         self.group_language.setTitle(lang_manager.get_text("Language Settings"))
         self.lbl_lang_type.setText(lang_manager.get_text("Select Language"))
@@ -1377,6 +1589,28 @@ class Setting_Window(QDialog):
 
         #---------------------------------------------------------------------------------
         # Save search settings
+=======
+        self.group_language.setTitle(lang_manager.get_text("Language Settings"))
+        self.lbl_lang_type.setText(lang_manager.get_text("Select Language"))
+
+        self.lbl_search_engine.setText(lang_manager.get_text("Search engine:"))
+
+    def accept(self):
+        ai = self.controls["AI"]
+        self.settings.setValue("AI/provider", ai["provider"].currentText())
+        self.settings.setValue("AI/base_url", ai["base_url"].text().strip())
+        self.settings.setValue("AI/api_key", ai["api_key"].text().strip())
+        self.settings.setValue("AI/system_prompt", ai["system_prompt"].toPlainText().strip())
+        self.settings.setValue("AI/temperature", ai["temperature"].value() / 10.0)
+        
+        self.settings.setValue("Appearance/theme", self.controls["Appearance"]["theme"].currentText())
+        self.settings.setValue("Appearance/toolbar_icons", self.controls["Appearance"]["toolbar_icons"].isChecked())
+        self.settings.setValue("Appearance/chat_background", self.controls["Appearance"]["chat_background"].text())
+
+        self.settings.setValue("Font/type", self.controls["Font"]["type"].currentText())
+        self.settings.setValue("Font/size", self.controls["Font"]["size"].currentText())
+        self.settings.setValue("Language/type", self.controls["Language"]["type"].currentText())
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.settings.setValue("Search/Baidu", self.controls["Search"]["Baidu"].isChecked())
         self.settings.setValue("Search/Google", self.controls["Search"]["Google"].isChecked())
 
@@ -1385,6 +1619,7 @@ class Setting_Window(QDialog):
         self.apply_settings_signal.emit()
         super().accept()
 
+<<<<<<< HEAD
     #-------------------------------------------------------------------------------------
     # Discard changes and close the dialog
     def reject(self):
@@ -1406,6 +1641,14 @@ class Setting_Window(QDialog):
         if ai["models"].count() > 0:
             ai["models"].setCurrentIndex(0)
         
+=======
+    def reject(self):
+        self.settings_page_operation_signal.emit("Settings discarded!")
+        super().reject()
+
+    def reset_preferences(self):
+        ai = self.controls["AI"]
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         ai["provider"].setCurrentText("OpenRouter (Recommended)")
         ai["base_url"].setText("https://openrouter.ai/api/v1/chat/completions")
         ai["api_key"].setText("")
@@ -1414,6 +1657,7 @@ class Setting_Window(QDialog):
         
         QMessageBox.information(self, "Reset", "AI Settings reset to defaults.")
 
+<<<<<<< HEAD
     #-------------------------------------------------------------------------------------
     # Test Connection to API
     def on_test_connection_clicked(self):
@@ -1510,4 +1754,13 @@ class Setting_Window(QDialog):
 
     def get_system_prompt(self):
         """Get the saved system prompt"""
+=======
+    def get_api_key(self):
+        return self.settings.value("AI/api_key", "", type=str)
+
+    def get_base_url(self):
+        return self.settings.value("AI/base_url", "", type=str)
+
+    def get_system_prompt(self):
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         return self.settings.value("AI/system_prompt", "You are a helpful assistant.", type=str)

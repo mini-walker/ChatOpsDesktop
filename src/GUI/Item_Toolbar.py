@@ -12,7 +12,11 @@ import os
 import json
 
 from PySide6.QtWidgets import (
+<<<<<<< HEAD
     QWidget, QHBoxLayout, QComboBox, QLineEdit, QToolButton, QFrame, QToolBar, QSizePolicy, QMessageBox, QStyle, QLabel
+=======
+    QWidget, QHBoxLayout, QComboBox, QLineEdit, QToolButton, QFrame, QToolBar, QSizePolicy, QMessageBox, QStyle
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 )
 from PySide6.QtCore import Qt, QSize, Signal
 from PySide6.QtGui import QIcon, QAction
@@ -43,7 +47,10 @@ class Tool_Bar(QToolBar):
     model_changed_signal        = Signal(str, QIcon)  # Send the new model name
     show_side_panel_requested   = Signal()
     show_setting_page_requested = Signal()
+<<<<<<< HEAD
     connection_test_signal      = Signal(bool, str)  # (success, message)
+=======
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
 
 
@@ -56,25 +63,41 @@ class Tool_Bar(QToolBar):
         self.setWindowTitle("Toolbar")              # The window title
         self.setObjectName("Tool_Bar")              # The object name
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.init_toolbar_ui()
 
     # ------------------------------------------------------------------
     def init_toolbar_ui(self):
 
+<<<<<<< HEAD
         # Adjust spacing between toolbar widgets
         layout = self.layout()
         if layout is not None:
             layout.setSpacing(12)  # increase inter-widget spacing
             layout.setContentsMargins(5, 5, 5, 5)  # add slight margins around toolbar
 
+=======
+        # The default toolbar layout is horizontal,
+        # If you want to create a vertical toolbar, you need to set the orientation to Qt.Vertical
+        # self.setOrientation(Qt.Vertical)
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
         #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         # Set the tool button for side panel
         self.btn_sidepanel = QToolButton()
         self.btn_sidepanel.setIcon(QIcon(utils.resource_path("images/WIN11-Icons/icons8-menu-100.png")))
+<<<<<<< HEAD
         self.btn_sidepanel.setObjectName("Side_Panel_Button_Toolbar")
         self.btn_sidepanel.setIconSize(QSize(24, 24))
         self.btn_sidepanel.setToolTip("Toggle Side Panel")
+=======
+        self.btn_sidepanel.setIconSize(QSize(24, 24))
+        self.btn_sidepanel.setToolTip("Show/Hide Side Panel")
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         # Connect the button clicked signal to the corresponding slot
         if self.parent is not None:
             self.btn_sidepanel.clicked.connect(self._on_sidepanel_clicked)
@@ -82,6 +105,7 @@ class Tool_Bar(QToolBar):
 
 
         #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+<<<<<<< HEAD
         # Load all configs from usr/account.json
         usr_dir = utils.get_usr_dir()
         account_file = usr_dir / "account.json"
@@ -165,6 +189,71 @@ class Tool_Bar(QToolBar):
         """
         self.provider_box.setStyleSheet(provider_qss)
 
+=======
+        # ComboBox: AI Engine selection
+        self.AI_engine_box = QComboBox()
+
+        # Get the AI engine list from usr/account.josn file
+        usr_dir = utils.get_usr_dir()
+        account_file = usr_dir / "account.json"
+        self.AI_provider, self.base_url, self.api_key, self.models = self.load_AI_config(account_file)
+        if self.api_key and self.models:
+            print("[INFO] API Key:", self.api_key)
+            print("[INFO] Models:", self.models)
+        else:
+            print("[ERROR] Failed to load OpenRouter configuration.")
+
+
+        self.model_icons = []  # Store model icons for future use
+
+        for full_model_name in self.models:
+            
+            if "/" in full_model_name:
+                print(f"[WARNING] Your model format is 'provider/model_name', such as those in OpenRouter and Groq.")
+                AI_engine = full_model_name.split("/")[1]
+            else:
+                print(f"[WARNING] Your model format is 'model_name', such as those in DeepSeek or Qwen.")
+                AI_engine = full_model_name
+
+            fname_lower = full_model_name.lower()
+            if any(k in fname_lower for k in ["openai", "gpt"]):
+                icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-chatgpt-100-2.png"))
+            elif "openrouter" in fname_lower:
+                icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-openrouter-100.png"))
+            elif "tngtech" in fname_lower:
+                icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-tngtech-100.png"))
+            elif "deepseek" in fname_lower:
+                icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-deepseek-100.png"))
+            elif "qwen" in fname_lower:
+                icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-qwen-100.png"))
+            elif any(k in fname_lower for k in ["google", "gemma", "gemini"]):
+                icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-Gemma-100.png"))
+            elif any(k in fname_lower for k in ["meta", "llama"]):
+                icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-meta-100.png"))
+            elif "kwaipilot" in fname_lower:
+                icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-meta-100.png"))
+            elif any(k in fname_lower for k in ["x-ai", "grok"]):
+                icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-grok-100.png"))
+            else:
+                icon = QIcon()  # default blank icon
+
+            # Add the model to the combobox
+            self.AI_engine_box.addItem(icon, AI_engine)
+            self.model_icons.append(icon)
+
+
+
+
+        # Connect the combobox selection change signal to the corresponding slot
+        self.AI_engine_box.currentIndexChanged.connect(self.emit_model_changed)
+
+        # Set style for the combobox
+        arrow_path = utils.resource_path("images/WIN11-Icons/icons8-expand-arrow-100.png")
+
+        print(f"[DEBUG] Loading arrow from: {arrow_path}")
+
+        arrow_path = arrow_path.replace("\\", "/")
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         self.AI_engine_box.setStyleSheet(f"""
             QComboBox {{
                 border: 1px solid #aaaaaa;
@@ -198,6 +287,7 @@ class Tool_Bar(QToolBar):
                 color: black;                   /* Hover text color */
             }}
         """)
+<<<<<<< HEAD
 
         # Populate model items initially
         self.update_models_list(self.models)
@@ -236,6 +326,11 @@ class Tool_Bar(QToolBar):
 
 
 
+=======
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         # Google Search box
         self.search_input = QLineEdit()
@@ -257,7 +352,11 @@ class Tool_Bar(QToolBar):
         """)
 
         # create an icon for google
+<<<<<<< HEAD
         google_icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-google-100.png"))  # the logo path
+=======
+        google_icon = QIcon(utils.resource_path("images/WIN11-Icons/icons8-google-100.png"))  # 你的logo路径
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         action_icon = QAction(google_icon, "Search", self.search_input)
 
         # add the icon to the line edit
@@ -268,6 +367,11 @@ class Tool_Bar(QToolBar):
             self.search_input.returnPressed.connect(lambda: self.search_requested.emit())
         #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         # Tool Buttons
         self.btn_settings = QToolButton()
@@ -284,6 +388,7 @@ class Tool_Bar(QToolBar):
         #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         # Add widgets
         self.addWidget(self.btn_sidepanel)
+<<<<<<< HEAD
         # Provider label and combo
         self.addWidget(self.lbl_provider)
         self.addSeparator()
@@ -295,6 +400,9 @@ class Tool_Bar(QToolBar):
         self.addWidget(self.AI_engine_box)
         self.addSeparator()
         self.addWidget(test_connection_container)
+=======
+        self.addWidget(self.AI_engine_box)
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
 
         # Add a spacer
         spacer = QWidget()
@@ -321,6 +429,7 @@ class Tool_Bar(QToolBar):
         print("Toolbar: emit show setting dialog signal")
         self.show_setting_page_requested.emit()
 
+<<<<<<< HEAD
     def _on_test_connection_clicked(self):
         """Handle test connection button click from toolbar"""
         import requests
@@ -434,6 +543,18 @@ class Tool_Bar(QToolBar):
         if new_model_index < 0 or new_model_index >= len(self.models):
             print("[WARNING] emit_model_changed: index out of bounds.")
             return
+=======
+    def get_current_AI_model(self):
+        print("[INFO] Current AI model selected:", self.models[self.AI_engine_box.currentIndex()])
+        return self.models[self.AI_engine_box.currentIndex()]
+    
+    def get_current_AI_model_logo(self):
+        return self.model_icons[self.AI_engine_box.currentIndex()]
+
+
+    def emit_model_changed(self, new_model_index):
+
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
         new_model = self.models[new_model_index]
         model_icon = self.model_icons[new_model_index]
 
@@ -442,6 +563,7 @@ class Tool_Bar(QToolBar):
     # ------------------------------------------------------------------
 
     # ------------------------------------------------------------------
+<<<<<<< HEAD
     def emit_provider_changed(self, new_provider_index):
         """
         Called when the user selects a different provider in the provider combo box.
@@ -653,6 +775,62 @@ class Tool_Bar(QToolBar):
             self.emit_model_changed(saved_index)
         else:
             self.model_changed_signal.emit("", QIcon())
+=======
+    def load_AI_config(self, config_path):
+        """
+        Load OpenRouter configuration from a JSON file.
+        Shows error message boxes if any required fields are missing.
+        
+        Returns:
+            tuple: (api_key: str, models: list) or (None, None) if error occurs
+        """
+        import json
+        from PySide6.QtWidgets import QMessageBox
+
+        # -------------------------------
+        # Load JSON file
+        # -------------------------------
+        try:
+            with open(config_path, "r", encoding="utf-8") as f:
+                config = json.load(f)
+        except Exception as e:
+            QMessageBox.critical(None, "Error", f"Failed to load account file:\n{e}")
+            return None, None
+
+        # -------------------------------
+        # Check Provider
+        # -------------------------------
+        AI_provider = config.get("Provider")
+        if not AI_provider:
+            QMessageBox.critical(None, "Error", "Missing 'Provider' in account file!")
+            return None, None
+        
+        # -------------------------------
+        # Check OpenRouter config
+        # -------------------------------
+        base_url = config.get("base_url")
+        if not base_url:
+            QMessageBox.critical(None, "Error", "Missing or invalid 'base_url' in account file!")
+            return None, None
+
+        # -------------------------------
+        # Check API Key
+        # -------------------------------
+        api_key = config.get("API-Key")
+        if not api_key:
+            QMessageBox.critical(None, "Error", "Missing 'API-Key' in account file!")
+            return None, None
+
+        # -------------------------------
+        # Check models list
+        # -------------------------------
+        models = config.get("models")
+        if not models or not isinstance(models, (list, set)):
+            QMessageBox.critical(None, "Error", "Missing or invalid 'models' list in account file!")
+            return None, None
+
+        return AI_provider, base_url, api_key, list(models)
+>>>>>>> 7d3060bec8fb91675825225fc2820c0a0193ded6
     # ------------------------------------------------------------------
 
 
