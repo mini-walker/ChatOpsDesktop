@@ -1,0 +1,37 @@
+# Summary: This is a translation mapping document for refactoring
+# It lists all the function names that need to be renamed from underscore-prefixed to letter-prefixed
+
+## Functions to Rename in Operation_Chat_Controller.py
+
+### TokenManager class:
+- `_check_date_reset()` → `check_date_reset()`
+
+### Operation_Chat_Controller class:
+- `_ensure_chat_file()` → `ensure_chat_file()`
+- `_scroll_to_bottom()` → `scroll_to_bottom()`
+- `_on_ai_reply()` → `on_ai_reply()`
+- `_append_record()` → `append_record()`
+- `_get_image_data_uri()` → `get_image_data_uri()`
+-` _history_to_messages()` → `history_to_messages()`
+- `_update_all_bubbles_width()` → `update_all_bubbles_width()`
+
+### Internal helper functions (keep underscore):
+- `_sanitize()` in resolve_chat_file - KEEP (local helper)
+- `_running` attribute - KEEP (internal state)
+
+## All References to Update:
+1. Line 138: `self._check_date_reset()` → `self.check_date_reset()`
+2. Line 160: `self._check_date_reset()` → `self.check_date_reset()`
+3. Line 330: `self.worker.finished.connect(self._on_ai_reply)` → `.on_ai_reply`
+4. Line 480: `self._ensure_chat_file()` → `self.ensure_chat_file()`
+5. Line 485: `self._append_record()` → `self.append_record()`
+6. Line 506: `self._update_all_bubbles_width` → `self.update_all_bubbles_width`
+7. Line 510: `self._history_to_messages()` → `self.history_to_messages()`
+8. Line 512: `self._scroll_to_bottom()` → `self.scroll_to_bottom()`
+9. Line 532: `self._append_record()` → `self.append_record()`  
+10. Line 550: `self._scroll_to_bottom` → `self.scroll_to_bottom`
+11. Line 568: `self._scroll_to_bottom` → `self.scroll_to_bottom`
+12. Line 675: `self._get_image_data_uri()` → `self.get_image_data_uri()`
+13. Line 712: `self._scroll_to_bottom` → `self.scroll_to_bottom`
+
+Total: 8 method renames + 13 call site updates

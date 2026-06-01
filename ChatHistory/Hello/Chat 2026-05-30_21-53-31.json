@@ -1,0 +1,317 @@
+[
+  {
+    "role": "user",
+    "text": "你是什么模型",
+    "images": [],
+    "model": "default"
+  },
+  {
+    "role": "assistant",
+    "text": "你好！我是 DeepSeek，由深度求索公司创造的 AI 助手。我是一个纯文本模型，擅长回答各种问题、进行对话交流、分析文档、编写代码等。\n\n我有以下特点：\n- **知识截止日期**：2025年5月\n- **上下文长度**：1M tokens（可以一次性处理《三体》三部曲这样的大部头书籍）\n- **文件处理能力**：支持上传图像、txt、pdf、ppt、word、excel 等文件，并从中读取文字信息\n- **联网搜索**：支持联网（需要手动开启）\n- **完全免费**：没有任何收费计划\n\n有什么我可以帮助你的吗？😊",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我返回一段表格",
+    "images": [],
+    "model": "default"
+  },
+  {
+    "role": "assistant",
+    "text": "| 姓名   | 年龄 | 城市   | 职业   |\n|--------|------|--------|--------|\n| 张三   | 28   | 北京   | 工程师 |\n| 李四   | 35   | 上海   | 医生   |\n| 王五   | 24   | 广州   | 教师   |\n| 赵六   | 30   | 深圳   | 设计师 |",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "你能显示公式吗？",
+    "images": [],
+    "model": "default"
+  },
+  {
+    "role": "assistant",
+    "text": "当然可以！我可以使用 LaTeX 格式在回答中显示数学公式。例如：\n\n- 内联公式：$E = mc^2$\n- 块级公式：\n$$\n\\int_{0}^{\\infty} e^{-x^2} \\, dx = \\frac{\\sqrt{\\pi}}{2}\n$$\n- 矩阵示例：\n$$\n\\begin{pmatrix}\na & b \\\\\nc & d\n\\end{pmatrix}\n$$\n\n请随时提出你想要的具体公式。",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我返回几个公式",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "当然，以下是几个常见的数学公式：\n\n1. 二次方程的求根公式：\n   $$\n   x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n   $$\n\n2. 圆的面积公式：\n   $$\n   A = \\pi r^2\n   $$\n\n3. 正弦函数的导数：\n   $$\n   \\frac{d}{dx} \\sin x = \\cos x\n   $$\n\n4. 牛顿第二定律：\n   $$\n   F = ma\n   $$\n\n5. 爱因斯坦质能方程：\n   $$\n   E = mc^2\n   $$\n\n6. 线性回归方程：\n   $$\n   y = \\beta_0 + \\beta_1 x + \\epsilon\n   $$\n\n7. 标准正态分布的概率密度函数：\n   $$\n   f(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}}\n   $$\n\n8. 多项式方程的根的和与积：\n   对于多项式方程 $P(x) = a_nx^n + a_{n-1}x^{n-1} + \\dots + a_0$，其根的和为 $-\\frac{a_{n-1}}{a_n}$，积为 $(-1)^n \\frac{a_0}{a_n}$。\n\n9. 微分方程的一阶线性微分方程：\n   $$\n   \\frac{dy}{dx} + P(x)y = Q(x)\n   $$\n\n10. 矩阵乘法：\n    对于矩阵 $A$ 和 $B$，其乘积 $C = AB$ 的元素 $c_{ij}$ 为：\n    $$\n    c_{ij} = \\sum_{k=1}^{n} a_{ik} b_{kj}\n    $$\n\n这些公式涵盖了不同领域的数学知识，希望对你有所帮助！",
+    "images": null,
+    "model": "default"
+  },
+  {
+    "role": "user",
+    "text": "返回几个矩阵",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "好的，这里提供几个常见的矩阵例子，用 LaTeX 形式展示。\n\n1. **零矩阵**（$2 \\times 3$ 阶）：\n$$\n\\mathbf{0} = \\begin{pmatrix}\n0 & 0 & 0 \\\\\n0 & 0 & 0\n\\end{pmatrix}\n$$\n\n2. **单位矩阵**（$3 \\times 3$ 阶）：\n$$\n\\mathbf{I}_3 = \\begin{pmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 0 \\\\\n0 & 0 & 1\n\\end{pmatrix}\n$$\n\n3. **对角矩阵**（对角元为 $2, -1, 5$）：\n$$\n\\mathbf{D} = \\begin{pmatrix}\n2 & 0 & 0 \\\\\n0 & -1 & 0 \\\\\n0 & 0 & 5\n\\end{pmatrix}\n$$\n\n4. **一个具体的 $2 \\times 2$ 矩阵**（例如，带有不同整数的方阵）：\n$$\n\\mathbf{A} = \\begin{pmatrix}\n3 & -2 \\\\\n1 & 4\n\\end{pmatrix}\n$$\n\n如果你需要特定规模的矩阵或某种特殊类型（如上三角、对称、随机等），请进一步说明，我可以为你生成更多例子。",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我几个矩阵",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "no such group",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我几个公式",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "这里有几个经典的数学和物理公式供你参考：\n\n1. 二次方程的求根公式：  \n   $$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n2. 欧拉恒等式（数学中最优美的公式之一）：  \n   $$e^{i\\pi} + 1 = 0$$\n\n3. 勾股定理（直角三角形）：  \n   $$a^2 + b^2 = c^2$$\n\n4. 爱因斯坦质能方程：  \n   $$E = mc^2$$\n\n5. 牛顿第二定律：  \n   $$F = ma$$\n\n6. 圆的面积公式：  \n   $$A = \\pi r^2$$\n\n7. 导数的幂法则：  \n   $$\\frac{d}{dx} x^n = n x^{n-1}$$\n\n如果有特定领域的需求，例如微积分、线性代数或物理中的其他公式，我也可以继续为你列出。",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我列一个矩阵",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "好的，这是一个简单的 $2 \\times 2$ 矩阵示例：\n\n$$\n\\begin{pmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{pmatrix}\n$$",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我列一个矩阵",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "$$\n\\begin{pmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{pmatrix}\n$$",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "再给我返回一个矩阵",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "当然，这是一个2x2的矩阵示例：\n\n$$\n\\begin{pmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{pmatrix}\n$$",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我返回一段文字，包含公式",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "欧拉公式 $e^{i\\pi} + 1 = 0$ 被认为是数学中最优美的公式之一，它将五个核心数学常数——自然对数的底数 $e$、虚数单位 $i$、圆周率 $\\pi$、乘法单位元 $1$ 和加法单位元 $0$——通过指数和加法巧妙地联系在一起。这个公式也可以推广为更一般的形式：$$e^{i\\theta} = \\cos\\theta + i\\sin\\theta,$$ 其中 $\\theta$ 为任意实数。当 $\\theta = \\pi$ 时，即得到上述特例。",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "矩阵",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "矩阵是数学中一个非常重要的概念，它被广泛应用于线性代数、物理学、计算机科学、经济学等领域。下面简要介绍矩阵的基本定义、表示法和常见运算。\n\n### 1. 矩阵的定义\n矩阵是一个按矩形排列的数的集合，通常用大写字母表示。例如一个 $m \\times n$ 的矩阵 $A$ 有 $m$ 行和 $n$ 列：\n\n$$\nA = \\begin{pmatrix}\na_{11} & a_{12} & \\cdots & a_{1n} \\\\\na_{21} & a_{22} & \\cdots & a_{2n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m1} & a_{m2} & \\cdots & a_{mn}\n\\end{pmatrix}\n$$\n\n其中 $a_{ij}$ 表示第 $i$ 行第 $j$ 列的元素。\n\n### 2. 基本运算\n- **加法**：两个同型矩阵（行数和列数分别相等）对应元素相加。\n- **标量乘法**：每个元素乘以同一个常数。\n- **矩阵乘法**：设 $A$ 为 $m \\times p$ 矩阵，$B$ 为 $p \\times n$ 矩阵，则乘积 $C = AB$ 是 $m \\times n$ 矩阵，其中\n  $$\n  c_{ij} = \\sum_{k=1}^{p} a_{ik} b_{kj}\n  $$\n  注意：矩阵乘法不满足交换律（一般 $AB \\neq BA$）。\n\n### 3. 特殊矩阵\n- **零矩阵**：所有元素为 $0$。\n- **单位矩阵**：主对角线上元素为 $1$，其余为 $0$，记为 $I$ 或 $I_n$。\n- **对角矩阵**：非主对角线元素全为零。\n- **对称矩阵**：满足 $A = A^{\\mathsf{T}}$（转置等于自身）。\n\n### 4. 矩阵的转置\n将矩阵的行与列互换得到转置矩阵，记为 $A^{\\mathsf{T}}$。若 $A$ 是 $m \\times n$，则 $A^{\\mathsf{T}}$ 是 $n \\times m$。\n\n### 5. 行列式与逆矩阵（针对方阵）\n- **行列式**：一个数，记作 $\\det(A)$ 或 $|A|$，用于判断矩阵是否可逆。\n- **逆矩阵**：对于 $n \\times n$ 矩阵 $A$，若存在矩阵 $B$ 使得 $AB = BA = I_n$，则 $B$ 称为 $A$ 的逆矩阵，记作 $A^{-1}$。可逆的充要条件是 $\\det(A) \\neq 0$。\n\n### 6. 矩阵的秩\n矩阵 $A$ 的秩是其行向量或列向量组的极大线性无关组中所含向量的个数，记作 $\\operatorname{rank}(A)$。它反映了矩阵的非退化程度。\n\n---\n\n矩阵是线性代数的核心工具，以上只是最基本的介绍。如果你有更具体的问题（例如如何计算逆矩阵、求解线性方程组、特征值与特征向量等），欢迎进一步提问！",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我返回一个矩阵",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "$$\n\\begin{pmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{pmatrix}\n$$",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我返回一个矩阵",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "$$\n\\begin{pmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{pmatrix}\n$$",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我返回一个矩阵",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "这是一个简单的 $2 \\times 2$ 矩阵示例：\n\n$$\n\\begin{pmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{pmatrix}\n$$\n\n如果你需要特定大小或特定元素的矩阵，请告诉我具体要求。",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我返回一个表格加一个矩阵",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "当然，这是您要求的表格和矩阵的 LaTeX 代码：\n\n**表格示例：**\n\n$$\n\\begin{tabular}{|c|c|c|}\n\\hline\n姓名 & 年龄 & 城市 \\\\ \\hline\n张三 & 25   & 北京 \\\\ \\hline\n李四 & 30   & 上海 \\\\ \\hline\n王五 & 22   & 深圳 \\\\ \\hline\n\\end{tabular}\n$$\n\n**矩阵示例：**\n\n$$\n\\begin{pmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{pmatrix}\n$$",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "不要latex表格",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "好的，我明白了，我不会在回答中使用LaTeX表格。请问您有什么问题需要我帮助吗？",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "那给我一个表格",
+    "images": [],
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "assistant",
+    "text": "好的，这里是一个常见函数的导数表，以Markdown表格形式呈现，其中数学表达式使用LaTeX格式。\n\n| 函数 $f(x)$ | 导数 $f'(x)$ |\n|------------|--------------|\n| $c$ （常数） | $0$ |\n| $x^n$ | $n x^{n-1}$ |\n| $\\sin x$ | $\\cos x$ |\n| $\\cos x$ | $-\\sin x$ |\n| $\\tan x$ | $\\sec^2 x$ |\n| $\\ln x$ | $\\frac{1}{x}$ |\n| $e^x$ | $e^x$ |\n| $a^x$ | $a^x \\ln a$ |\n| $\\log_a x$ | $\\frac{1}{x \\ln a}$ |\n| $\\arcsin x$ | $\\frac{1}{\\sqrt{1-x^2}}$ |\n| $\\arccos x$ | $-\\frac{1}{\\sqrt{1-x^2}}$ |\n| $\\arctan x$ | $\\frac{1}{1+x^2}$ |\n\n如果你需要其他类型的表格（如积分表、函数值表等），请告诉我具体需求。",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我返回一个矩阵",
+    "images": []
+  },
+  {
+    "role": "assistant",
+    "text": "$$\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n$$",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "两个矩阵",
+    "images": []
+  },
+  {
+    "role": "assistant",
+    "text": "两个矩阵是线性代数中的基本对象。通常，矩阵由行和列组成，例如一个 $m \\times n$ 矩阵 $A$ 有 $m$ 行和 $n$ 列。当涉及两个矩阵时，常见的运算包括：\n\n### 1. 矩阵加法\n要求两个矩阵维度相同（都是 $m \\times n$）。对应元素相加：\n$$\n(A + B)_{ij} = a_{ij} + b_{ij}\n$$\n\n### 2. 矩阵减法\n类似加法，对应元素相减：\n$$\n(A - B)_{ij} = a_{ij} - b_{ij}\n$$\n\n### 3. 矩阵乘法\n要求第一个矩阵的列数等于第二个矩阵的行数。若 $A$ 是 $m \\times n$，$B$ 是 $n \\times p$，则乘积 $C = AB$ 是 $m \\times p$ 矩阵，其中：\n$$\nc_{ij} = \\sum_{k=1}^{n} a_{ik} b_{kj}\n$$\n\n### 4. 数乘\n一个标量 $\\lambda$ 与矩阵 $A$ 相乘，每个元素乘以 $\\lambda$：\n$$\n(\\lambda A)_{ij} = \\lambda a_{ij}\n$$\n\n### 5. 转置\n矩阵 $A$ 的转置 $A^\\top$ 交换行和列：\n$$\n(A^\\top)_{ij} = a_{ji}\n$$\n\n### 6. 迹\n仅对方阵（行数等于列数）定义，迹等于对角线元素之和：\n$$\n\\operatorname{tr}(A) = \\sum_{i=1}^{n} a_{ii}\n$$\n\n### 7. 逆矩阵\n若 $A$ 是 $n \\times n$ 方阵且非奇异（行列式不为零），则存在逆矩阵 $A^{-1}$ 满足 $AA^{-1}=A^{-1}A=I$。\n\n### 8. 行列式\n一个方阵 $A$ 的行列式 $\\det(A)$ 是一个标量，用于判断矩阵是否可逆等。\n\n如果您有具体的两个矩阵（例如给出数值），我们可以进一步演示它们的运算。",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "我需要两个矩阵",
+    "images": []
+  },
+  {
+    "role": "assistant",
+    "text": "您需要两个矩阵作为示例。以下是两个常用形式的矩阵：\n\n$$ A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix} $$\n\n$$ B = \\begin{pmatrix} 5 & 6 & 7 \\\\ 8 & 9 & 10 \\\\ 11 & 12 & 13 \\end{pmatrix} $$\n\n矩阵 \\(A\\) 是 \\(2 \\times 2\\) 方阵，矩阵 \\(B\\) 是 \\(3 \\times 3\\) 方阵。如果您需要特定大小或类型的矩阵，请告诉我更多细节。",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "给我返回两个矩阵",
+    "images": []
+  },
+  {
+    "role": "assistant",
+    "text": "好的，这是两个矩阵：\n\n$$\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n$$\n\n$$\n\\begin{pmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{pmatrix}\n$$",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "你是什么模型",
+    "images": []
+  },
+  {
+    "role": "assistant",
+    "text": "我是 DeepSeek 最新版本的模型，由深度求索公司创造。如果你对我的具体版本号或技术细节感兴趣，可以查阅官方文档和公告。请问有什么我可以帮助你的吗？",
+    "images": null,
+    "model": "deepseek-v4-flash"
+  },
+  {
+    "role": "user",
+    "text": "你是什么模型",
+    "images": []
+  },
+  {
+    "role": "assistant",
+    "text": "401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions",
+    "images": null,
+    "model": "qwen/qwen3-32b"
+  },
+  {
+    "role": "user",
+    "text": "你是什么模型",
+    "images": []
+  },
+  {
+    "role": "assistant",
+    "text": "我是通义千问（Qwen），是阿里巴巴集团通义实验室自主研发的超大规模语言模型。我能够回答问题、创作文字，比如写故事、写公文、写邮件、写剧本、逻辑推理、编程等等，还能表达观点，玩游戏等。如果你有任何问题或需要帮助，欢迎随时告诉我！",
+    "images": null,
+    "model": "default"
+  },
+  {
+    "role": "user",
+    "text": "你是pro吗？",
+    "images": []
+  },
+  {
+    "role": "assistant",
+    "text": "我不是“Pro”（专业版）用户哦。我是一个通用的AI助手，目前并没有“Pro”这种付费或升级版本的说法。如果你是指某个特定平台（比如Claude Pro）的专业付费计划，那需要看你在哪个平台上使用，但作为AI模型本身，我没有“Pro”或“普通版”的区别，只是尽力帮你解答问题。有什么我可以帮你的吗？😊",
+    "images": null,
+    "model": "deepseek-v4-pro"
+  },
+  {
+    "role": "user",
+    "text": "你是deepseek-v4-pro吗？",
+    "images": []
+  },
+  {
+    "role": "assistant",
+    "text": "I'm not specifically \"DeepSeek-V4-Pro\" — I'm an AI assistant created by DeepSeek, but I don't have detailed version information to confirm a specific model number. I'm here to help with whatever you need! Is there something specific you'd like to know or discuss?",
+    "images": null,
+    "model": "deepseek-v4-pro"
+  }
+]
